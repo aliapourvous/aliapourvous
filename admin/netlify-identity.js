@@ -1,7 +1,7 @@
 if (window.netlifyIdentity) {
-  window.netlifyIdentity.on("init", user => {
+  window.netlifyIdentity.on("init", function (user) {
     if (!user) {
-      window.netlifyIdentity.on("login", () => {
+      window.netlifyIdentity.on("login", function() {
         document.location.href = "/admin/";
       });
     }
@@ -9,11 +9,15 @@ if (window.netlifyIdentity) {
 }
 
 var CategoriesControl = createClass({
-  handleChange: (e) => {
-    this.props.onChange(e.target.value.split(",").map((e) => e.trim()));
+  handleChange: function (e) {
+    this.props.onChange(e.target.value.split(",")
+      .map(function(e) {
+        e.trim();
+      })
+    );
   },
 
-  render: () => {
+  render: function() {
     var value = this.props.value;
     return h("input", {
       type: "text",
@@ -24,9 +28,9 @@ var CategoriesControl = createClass({
 });
 
 var CategoriesPreview = createClass({
-  render: () => {
+  render: function() {
     return h("ul", {},
-      this.props.value.map((val, index) => {
+      this.props.value.map(function(val, index) {
         return h("li", {key: index}, val);
       })
     );
