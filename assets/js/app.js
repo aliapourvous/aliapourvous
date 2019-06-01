@@ -38,7 +38,7 @@ function fetchInsta (options) {
           href: data.link,
           target: "_blank"
         }).append(
-          $("<div>").addClass(["jdb-padding", (data.type == "video" ? " insta-video" : "")]).append(
+          $("<div>").addClass((data.type == "video" ? " insta-video" : "")).append(
             $("<div>").attr({
               class: "jdb-image",
               style: "background-image:url(" + pic + ")"
@@ -101,9 +101,9 @@ $(document).ready(function(){
     tClose: "Fermer (Echap)",
     tLoading: "Chargement...",
     gallery: {
-      tPrev: "Précédent (Flèche gauche)",
-      tNext: "Suivant (Flèche droite)",
-      tCounter: "%curr% sur %total%"
+      tPrev: "Précédent (Bouton gauche)",
+      tNext: "Suivant (Bouton droit)",
+      tCounter: "Photo %curr% sur %total%"
     },
     image: {
       tError: "<a href='%url%'>L'image</a> ne peut être chargée."
@@ -113,7 +113,8 @@ $(document).ready(function(){
     }
   });
 
-  // $(".page img, .post img").magnificPopup({type:"image"});
+  // .image-link
+  $(".page #markdown a, .post #markdown a").magnificPopup({ type: "image" });
 
   (function(){
     if (document.querySelector(".news-container") !== null) {

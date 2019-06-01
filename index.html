@@ -5,9 +5,19 @@ permalink: /
 <section class="intro jdb-theme jdb-padding-64">
   <div class="grid jdb-display-container">
     <div class="jdb-container jdb-padding-64" style="max-width:1234px; margin:auto">
-      <h1 class="intro__text font-effect-emboss jdb-text-white">
-        BONJOUR,<br/>Je m’appelle Alia et je suis une créatrice de contenu, une entrepreneure créative et une artiste pour la cause.
-      </h1>
+      <div class="jdb-col">
+        <div class="jdb-col jdb-twothird">
+          <h1 class="intro__text font-effect-emboss jdb-text-white">
+            BONJOUR,<br/>Je m'appelle Alia et je suis une créatrice de contenu, une entrepreneure créative et une artiste pour la cause.
+          </h1>
+        </div>
+        <div class="jdb-col jdb-quarter jdb-center jdb-hide-small">
+          {% include figure.html src="/assets/images/me-playing-guitare.jpg" img_class="jdb-circle jdb-opacity-min" %}
+          <button class="jdb-btn jdb-round jdb-theme-action">
+            En savoir plus <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -55,7 +65,10 @@ permalink: /
         </div>
       {% endif %}
     </div>
+
+    <!-- Right column -->
     <div class="jdb-col l4">
+      {% include social-buttons-list.html %}
       <div class="jdb-dark-gray__">
           <div class="jdb-container jdb-padding jdb-theme">
             <h4><i class="fa fa-bullhorn" aria-hidden="true"></i> Publicité</h4>
@@ -70,36 +83,32 @@ permalink: /
         {% include tag_widget.html %}
         <hr/>
         <div class="jdb-margin-bottom">
-          {% include newsletter.html class="jdb-white jdb-padding-small" %}
+          {% include newsletter.html class="jdb-round jdb-theme" %}
         </div>
       </div>
-    </div>
-
-  </div>
-  <div class="jdb-light-gray jdb-padding" id="inscription" style="padding-top:0!important;">
-    <div class="jdb-content jdb-margin-bottom">
-      {% include newsletter.html %}
     </div>
   </div>
 </section>
 
 {% if site.social.instagram %}
   <section>
-    <div id="instagram">
-      <div class="jdb-container jdb-theme">
-        <p class="jdb-xlarge jdb-center">
-          <i class="fa fa-instagram jdb-text-pink" aria-hidden="true"></i> 
-            Suivez <i><a class="link" href="{{ site.social.instagram }}" target="_blank">
-              @{{ site.social.instagram | split: ".com/" | last }}</a></i> sur instagram
-        </p>
+    {% if site.social.instagram %}
+      <div id="instagram">
+        <div class="jdb-container jdb-theme">
+          <p class="jdb-xlarge jdb-center">
+            <i class="fa fa-instagram jdb-text-pink" aria-hidden="true"></i> 
+              Suivez <i><a class="link" href="{{ site.social.instagram }}" target="_blank">
+                @{{ site.social.instagram | split: ".com/" | last }}</a></i> sur instagram
+          </p>
+        </div>
       </div>
-    </div>
+    {% endif %}
     <div id="instagram-frame"></div>
   </section>
 {% endif %}
 
 <section class="jdb-padding-64 jdb-black jdb-center jdb-theme">
   <a class="jdb-xxlarge link" href="{{ '/contact' | prepend: site.baseurl }}">
-    <span class="">Contactez-moi</span>
+    <span class="jdb-bold">Contactez-moi</span>
   </a>
 </section>
