@@ -18,7 +18,7 @@
       "@context"  : "http://schema.org/",
       "@type"     : "Person",
       "name"      : "{{ site.name }}",
-      "jobTitle"  : "Web Developer",
+      "jobTitle"  : "Entrepreneure",
       "email"     : "{{ site.email }}",
       "url"       : "{{ site.url }}",
       "image"     : "{{ site.default_img | prepend: site.baseurl }}"
@@ -56,6 +56,9 @@
 {% if page.theme_color %}
   <meta name="theme-color" content="{{ page.theme_color }}">
   <meta name="msapplication-navbutton-color" content="{{ page.theme_color }}">
+{% else %}
+  <meta name="theme-color" content="#5dbcd2">
+  <meta name="msapplication-navbutton-color" content="#5dbcd2">
 {% endif %}
 <link rel="icon" type="image/x-icon" href="{{ '/favicon.ico' | prepend: site.baseurl }}">
 <!-- <link rel="manifest" href="/manifest.json"/> -->

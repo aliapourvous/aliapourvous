@@ -7,32 +7,32 @@
       {% if site.social.github %}
         <a class="jdb-button link jdb-bar-item" href="{{ site.social.github }}" target="_blank">
           <i class="fa fa-github jdb-text-black" aria-label="GitHub" aria-hidden="true"></i>
-          <!--<span class="jdb-hide"> GitHub</span>--></a>
+        </a>
       {% endif %}
       {% if site.social.codepen %}
         <a class="jdb-button link jdb-bar-item" href="{{ site.social.codepen }}" target="_blank">
           <i class="fa fa-codepen jdb-text-black" aria-label="CodePen" aria-hidden="true"></i>
-          <!--<span class="jdb-hide"> CodePen</span>--></a>
+        </a>
       {% endif %}
       {% if site.social.facebook %}
         <a class="jdb-button link jdb-bar-item" href="{{ site.social.facebook }}" target="_blank">
           <i class="fa fa-facebook-official jdb-text-blue-gray" aria-label="Facebook" aria-hidden="true"></i> 
-          <!--<span class="jdb-hide"> Facebook</span>--></a>
+        </a>
       {% endif %}
       {% if site.social.instagram %}
         <a class="jdb-button link jdb-bar-item" href="{{ site.social.instagram }}" target="_blank">
           <i class="fa fa-instagram jdb-text-pink" aria-label="Instagram" aria-hidden="true"></i>
-          <!--<span class="jdb-hide"> Instagram</span>--></a>
+        </a>
       {% endif %}
       {% if site.social.twitter %}
         <a class="jdb-button link jdb-bar-item" href="{{ site.social.twitter }}" target="_blank">
           <i class="fa fa-twitter jdb-text-blue" aria-label="Twitter" aria-hidden="true"></i>
-          <!--<span class="jdb-hide"> Twitter</span>--></a>
+        </a>
       {% endif %}
       {% if site.social.snapchat %}
         <a class="jdb-button link jdb-bar-item" href="{{ site.social.snapchat }}" target="_blank">
           <i class="fa fa-snapchat-ghost jdb-text-yellow" aria-label="Snapchat" aria-hidden="true"></i>
-          <!--<span class="jdb-hide"> Snapchat</span>--></a>
+        </a>
       {% endif %}
       {% if site.social.dev %}
         <a class="jdb-button link jdb-bar-item" href="{{ site.social.dev.link }}" target="_blank">
@@ -76,9 +76,9 @@
           </button>
           <div class="jdb-dropdown-content jdb-bar-block jdb-border" style="z-index:9999">
             <a href="{{ '/spiritual-journey' }}" class="jdb-bar-item jdb-button">Spiritual journey</a>
-            <a href="{{ '/#' }}" class="jdb-bar-item jdb-button">Africa</a>
-            <a href="{{ '/#' }}" class="jdb-bar-item jdb-button">Artiste</a>
-            <a href="{{ '/#' }}" class="jdb-bar-item jdb-button">Globe trotteuse</a>
+            <a href="{{ '/#' }}" class="jdb-bar-item jdb-button jdb-disabled">Africa</a>
+            <a href="{{ '/#' }}" class="jdb-bar-item jdb-button jdb-disabled">Artiste</a>
+            <a href="{{ '/#' }}" class="jdb-bar-item jdb-button jdb-disabled">Globe trotteuse</a>
           </div>
         </div>
         <a href="{{ '/contact' | prepend: site.baseurl }}" class="jdb-bar-item jdb-button">
@@ -104,11 +104,12 @@
         </button>
         <div class="jdb-bar-block" id="categrories-sm-acc" style="display:none">
           <a href="{{ '/spiritual-journey' }}" class="jdb-bar-item jdb-button">Spiritual journey</a>
-          <a href="{{ '/#' }}" class="jdb-bar-item jdb-button">Africa</a>
-          <a href="{{ '/#' }}" class="jdb-bar-item jdb-button">Artiste</a>
-          <a href="{{ '/#' }}" class="jdb-bar-item jdb-button">Globe trotteuse</a>
+          <a href="{{ '/#' }}" class="jdb-bar-item jdb-button  jdb-disabled">Africa</a>
+          <a href="{{ '/#' }}" class="jdb-bar-item jdb-button jdb-disabled">Artiste</a>
+          <a href="{{ '/#' }}" class="jdb-bar-item jdb-button jdb-disabled">Globe trotteuse</a>
         </div>
       </div>
+      <a class="jdb-bar-item jdb-button" data-jdb-action="toggle-small-screen-menu" href="{{ '/blog' }}">BLOG</a> jdb-disabled
       <a class="jdb-bar-item jdb-button" data-jdb-action="toggle-small-screen-menu" href="{{ '/contact' }}">CONTACT</a>
       <a class="jdb-bar-item jdb-button" data-jdb-action="toggle-small-screen-menu" href="{{ '/a-propos' }}">A PROPOS</a>
     </div>
