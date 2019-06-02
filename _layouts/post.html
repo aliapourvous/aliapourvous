@@ -39,7 +39,7 @@ layout: default
       </div>
       <hr/>
     {% endif %}
-    <div class="share-container jdb-row-padding">
+    <div class="share-container jdb-row">
       <h4>Partager cet article sur :</h4>
       <div class="jdb-third jdb-padding jdb-hover-light-gray">
         <a class="share__link" href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{site.baseurl}}{{ page.url }}" onclick="window.open(this.href, '{{ page.title }}', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" >
@@ -59,11 +59,11 @@ layout: default
       </div>
     </div>
 
-{% comment %}
-    {% if page.comments %}
-      {% include comments.html %}
-    {% endif %}
-{% endcomment %}
+    {% comment %}
+      {% if page.comments %}
+        {% include comments.html %}
+      {% endif %}
+    {% endcomment %}
   </div>
 
   {% if page.previous.url or page.next.url %}

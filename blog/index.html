@@ -23,7 +23,7 @@ tag_cloud_limit: 3
 {% if paginator.posts.size > 0 %}
   <section id="articles" class="posts jdb-content jdb-margin-top">
     <div class="grid jdb-row-padding jdb-margin-bottom">
-      <div class="jdb-col l8 s12">
+      <div class="jdb-col jdb-twothird l8-s12">
         <!-- <h2 class="posts__title jdb-text-white">
           <span>Articles récents</span>
         </h2> -->
@@ -61,7 +61,10 @@ tag_cloud_limit: 3
           {% endif %}
         </div>
       </div>
-      <div class="jdb-col l4">
+      <div class="jdb-col jdb-third x-l4">
+        <div class="jdb-panel jdb-light-gray jdb-margin-bottom jdb-margin-0">
+            {% include social-buttons-list.html %}
+        </div>
         <div class="jdb-dark-gray__">
           <div class="jdb-container jdb-padding jdb-theme">
             <h4><i class="fa fa-bullhorn" aria-hidden="true"></i> Publicité</h4>
@@ -99,74 +102,16 @@ tag_cloud_limit: 3
 </section>
 
 <section class="jdb-padding-64 jdb-theme-d5 jdb-center">
-  <a class="jdb-xxlarge link" href="{{ '/contact' | prepend: site.baseurl }}">
+  <a class="jdb-xxlarge link jdb-bold" href="{{ '/contact' | prepend: site.baseurl }}">
     <span class="cta__text">Contactez-moi</span>
   </a>
 </section>
 
 
 {% comment %}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- footer -->
-<footer class="jdb-container jdb-padding-32 jdb-dark-grey">
-  <div class="jdb-row-padding">
-    <div class="jdb-third">
-      <h3>FOOTER</h3>
-      <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-      <p>Powered by <a href="https://www.jdbschools.com/jdbcss/default.asp" target="_blank">jdb.css</a></p>
-    </div>
-  
-    <div class="jdb-third">
-      <h3>BLOG POSTS</h3>
-      <ul class="jdb-ul jdb-hoverable">
-        <li class="jdb-padding-16">
-          <img src="/jdbimages/workshop.jpg" class="jdb-left jdb-margin-right" style="width:50px">
-          <span class="jdb-large">Lorem</span><br>
-          <span>Sed mattis nunc</span>
-        </li>
-        <li class="jdb-padding-16">
-          <img src="/jdbimages/gondol.jpg" class="jdb-left jdb-margin-right" style="width:50px">
-          <span class="jdb-large">Ipsum</span><br>
-          <span>Praes tinci sed</span>
-        </li> 
-      </ul>
-    </div>
-
-    <div class="jdb-third">
-      <h3>POPULAR TAGS</h3>
-      <p>
-        <span class="jdb-tag jdb-black jdb-margin-bottom">Travel</span> <span class="jdb-tag jdb-grey jdb-small jdb-margin-bottom">New York</span> <span class="jdb-tag jdb-grey jdb-small jdb-margin-bottom">London</span>
-        <span class="jdb-tag jdb-grey jdb-small jdb-margin-bottom">IKEA</span> <span class="jdb-tag jdb-grey jdb-small jdb-margin-bottom">NORWAY</span> <span class="jdb-tag jdb-grey jdb-small jdb-margin-bottom">DIY</span>
-        <span class="jdb-tag jdb-grey jdb-small jdb-margin-bottom">Ideas</span> <span class="jdb-tag jdb-grey jdb-small jdb-margin-bottom">Baby</span> <span class="jdb-tag jdb-grey jdb-small jdb-margin-bottom">Family</span>
-        <span class="jdb-tag jdb-grey jdb-small jdb-margin-bottom">News</span> <span class="jdb-tag jdb-grey jdb-small jdb-margin-bottom">Clothing</span> <span class="jdb-tag jdb-grey jdb-small jdb-margin-bottom">Shopping</span>
-        <span class="jdb-tag jdb-grey jdb-small jdb-margin-bottom">Sports</span> <span class="jdb-tag jdb-grey jdb-small jdb-margin-bottom">Games</span>
-      </p>
-    </div>
-
-  </div>
-  </footer>
-
-
   <style type="text/css">
     .jdb-pagination a.jdb-button {border: 1px solid transparent}
     .jdb-pagination a.jdb-button:hover {border-color: #ccc;box-shadow: none}
     .jdb-pagination .jdb-button:not(a) {box-shadow: none}
   </style>
-
 {% endcomment %}

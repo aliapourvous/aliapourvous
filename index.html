@@ -7,15 +7,15 @@ permalink: /
     <div class="jdb-container jdb-padding-64" style="max-width:1234px; margin:auto">
       <div class="jdb-col">
         <div class="jdb-col jdb-twothird">
-          <h1 class="intro__text font-effect-emboss jdb-text-white">
+          <h2 class="intro__text font-effect-emboss jdb-text-white">
             BONJOUR,<br/>Je m'appelle Alia et je suis une créatrice de contenu, une entrepreneure créative et une artiste pour la cause.
-          </h1>
+          </h2>
         </div>
         <div class="jdb-col jdb-quarter jdb-center jdb-hide-small">
           {% include figure.html src="/assets/images/me-playing-guitare.jpg" img_class="jdb-circle jdb-opacity-min" %}
-          <button class="jdb-btn jdb-round jdb-theme-action">
+          <a class="jdb-btn jdb-round jdb-theme-action" href="{{ '/a-propos' | relative_url }}">
             En savoir plus <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-          </button>
+          </a>
         </div>
       </div>
     </div>
@@ -40,12 +40,12 @@ permalink: /
 <div class="jdb-padding-32"></div>
 
 <section id="articles" class="posts jdb-white">
-  <div class="jdb-row-padding jdb-padding jdb-white jdb-content">
-    <div class="jdb-col l8 s12">
-      <h3 class="posts__title jdb-center">
+  <div class="jdb-row-padding jdb-white jdb-content">
+    <div class="jdb-col jdb-twothird l8-s12">
+      <h3 class="posts__title jdb-center jdb-bold">
         <span>Articles récents</span> - <a href="{{ '/blog' | prepend: site.baseurl }}"><u>Blog</u></a>
       </h3>
-      <div class="posts__container jdb-row-padding" itemscope itemtype="http://schema.org/Blog">
+      <div class="posts__container" itemscope itemtype="http://schema.org/Blog">
         
         {% for post in site.posts limit:3 %}
           {% include post-card.html %}
@@ -67,24 +67,25 @@ permalink: /
     </div>
 
     <!-- Right column -->
-    <div class="jdb-col l4">
-      {% include social-buttons-list.html %}
+    <div class="jdb-col jdb-third x-l4">
+      <div class="jdb-panel jdb-light-gray jdb-margin-bottom jdb-margin-0">
+        {% include social-buttons-list.html %}
+      </div>
       <div class="jdb-dark-gray__">
-          <div class="jdb-container jdb-padding jdb-theme">
-            <h4><i class="fa fa-bullhorn" aria-hidden="true"></i> Publicité</h4>
-          </div>
-          <div class="jdb-container jdb-white">
-            <div class="jdb-container jdb-display-container jdb-light-grey jdb-section" style="height:200px; background-image:url({{ '/assets/images/no-image.png' | prepend: site.baseurl }});background-position:right; background-size:contain; background-repeat:no-repeat">
-              <span class="jdb-display-leftmiddle jdb-margin-left" style="max-width:140px">Aucune publicité pour le moment</span>
-            </div>
+        <div class="jdb-container jdb-padding jdb-theme">
+          <h4><i class="fa fa-bullhorn" aria-hidden="true"></i> Publicité</h4>
+        </div>
+        <div class="jdb-container jdb-white">
+          <div class="jdb-container jdb-display-container jdb-light-grey jdb-section" style="height:200px; background-image:url({{ '/assets/images/no-image.png' | prepend: site.baseurl }});background-position:right; background-size:contain; background-repeat:no-repeat">
+            <span class="jdb-display-leftmiddle jdb-margin-left" style="max-width:140px">Aucune publicité pour le moment</span>
           </div>
         </div>
-        <hr/>
-        {% include tag_widget.html %}
-        <hr/>
-        <div class="jdb-margin-bottom">
-          {% include newsletter.html class="jdb-round jdb-theme" %}
-        </div>
+      </div>
+      <hr/>
+      {% include tag_widget.html %}
+      <hr/>
+      <div class="jdb-margin-bottom">
+        {% include newsletter.html class="jdb-round jdb-theme" %}
       </div>
     </div>
   </div>

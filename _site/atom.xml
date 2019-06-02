@@ -4,7 +4,7 @@
  <title>Coucou! C’est Alia & C pour vous!</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2019-06-01T09:52:57+02:00</updated>
+ <updated>2019-06-02T14:14:03+02:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name></name>
@@ -17,9 +17,9 @@
    <link href="http://localhost:4000/blog/2017/03/20/mon-photoshoot-au-dressing-de-fanfan/"/>
    <updated>2017-03-20T00:00:00+01:00</updated>
    <id>http://localhost:4000/blog/2017/03/20/mon-photoshoot-au-dressing-de-fanfan</id>
-   <content type="html">&lt;p&gt;Toujours un plaisir de se faire chouchouter par Fanfan qui sait comment vous sublimer au moindre coût….Un mercredi après-midi ensoleillé pour des photos qui nous prépare déjà au printemps…&lt;/p&gt;
+   <content type="html">&lt;p&gt;Toujours un plaisir de se faire chouchouter par Fanfan qui sait comment vous sublimer au moindre coût… Un mercredi après-midi ensoleillé pour des photos qui nous prépare déjà au printemps…&lt;/p&gt;
 
-&lt;img src=&quot;/assets/images/me-20170315-wa0015.jpg&quot; alt=&quot;Mon photoshoot au dressing de Fanfan&quot;/&gt;</content>
+{% include figure.html src=&quot;/assets/images/me-20170315-wa0015.jpg&quot; alt=&quot;Mon photoshoot au dressing de Fanfan&quot; %}</content>
  </entry>
  
  <entry>
@@ -30,7 +30,11 @@
    <content type="html">&lt;p&gt;La langue française me laisse souvent perplexe...&lt;/p&gt;
 &lt;p&gt;Quand je retrouve des phrases du genre &quot;votre nom restera dans les annales&quot;, ou mon médecin m'a prescrit une fois un médicament en suppositoire à insérer par voie anale, anale qui fait allusion à ce que vous savez déjà...&lt;/p&gt;
 
-
+{% comment %}
+  &lt;div style=&quot;clear: both; text-align: center;&quot;&gt;
+    &lt;img src=&quot;https://3.bp.blogspot.com/-u6Du0RXYArI/WM09Pb0cK9I/AAAAAAAALC8/zwQqeCjK0gERZq2d2MpnnpK_TT1G4NtdgCLcB/s1600/barbecue.jpg&quot; titre=&quot;Barbecue&quot; alt=&quot;Barbecue&quot;/&gt;
+  &lt;/div&gt;
+{% endcomment %}
 
 &lt;p&gt;Dire que mon nom restera dans les annales, moi, je le perçois tout de suite comme une insulte...&lt;br /&gt;&lt;br /&gt;
 Bon! Je réfléchis à haute voix... Car barbecue est un de ces mots qui m'énervent sérieusement... Barbe c'est ce qui couvre nos mentons, cue...&lt;/p&gt;</content>
@@ -102,7 +106,11 @@ Technocrates (est une forme de gouvernement où la place des experts techniques 
 
 &lt;p class='jdb-codespan jdb-large'&gt;La démocratie est meilleur que la dictature&lt;/p&gt;
 
-
+{% comment %}
+  &lt;div style=&quot;clear:both; text-align:center;&quot;&gt;
+    &lt;img src=&quot;https://3.bp.blogspot.com/-nYA14V_WQVM/V__KgAXDQPI/AAAAAAAAKf8/X1ljE7gn-dIXGa1_oZ6XfJWwSinBZVeogCLcB/s1600/demokratie-1536628_1280.jpg&quot; alt=&quot;Démocratie&quot;/&gt;
+  &lt;/div&gt;
+{% endcomment %}
 
 &lt;p&gt;&lt;b&gt;La politique&lt;/b&gt;, c'est pas compliqué, il suffit d'avoir une bonne conscience, et pour cela il faut juste avoir une mauvaise mémoire !&lt;br/&gt;
 Le plus dur pour les hommes politiques, c'est d'avoir la mémoire qu'il faut pour se souvenir de ce qu'il ne faut pas dire.&lt;/p&gt;

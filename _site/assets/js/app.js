@@ -83,6 +83,12 @@ $(document).ready(function(){
       $("#small-screen-menu").slideToggle();
     });
   });
+  
+  $("[data-jdb-toggle-onclick]").each(function() {
+    $(this).click(function() {
+      $($(this).attr("data-jdb-toggle-onclick")).slideToggle();
+    });
+  });
 
   $("[data-jdb-toggle]").each(function(){
     $(this).click(function(){
@@ -109,8 +115,11 @@ $(document).ready(function(){
     }
   });
 
-  // .image-link
-  $(".page #markdown a, .post #markdown a").magnificPopup({ type: "image" });
+  $(".page #markdown a.jdb-image-zoom , .post #markdown a.jdb-image-zoom").magnificPopup({ type: "image" });
+
+  if ($(".home").length) {
+    $(".home a.jdb-image-zoom").magnificPopup({ type: "image" });
+  }
 
   (function(){
     if (document.querySelector(".news-container") !== null) {

@@ -88,6 +88,7 @@ body.inverse .hr::after {
   background-image: linear-gradient(-90deg,rgba(255,255,255,0) 0,#fff 5%,#fff 90%,rgba(255,255,255,0) 100%)
 }
 
+a {word-break: normal}
 .jdb-visuallyhidden {
   border: 0;
   clip: rect(0 0 0 0);
@@ -153,9 +154,10 @@ body.inverse .hr::after {
 .jdb-lowercase {text-transform:lowercase!important}
 .jdb-uppercase {text-transform:uppercase!important}
 .jdb-text-justify {text-align:justify}
-.jdb-btn-block {
-  width: 100%;
-}
+.jdb-btn-block {width: 100%}
+.jdb-wrap {white-space: normal}
+.jdb-margin-0 {margin:0}
+.jdb-margin-0-f {margin:0!important}
 
 .jdb-shake,
 .jdb-hover-shake:hover {
@@ -362,7 +364,8 @@ footer .footer__copy {
 .post .share-container .share__link {
   text-decoration: none;
 }
-.post #markdown p:first-of-type:first-child::first-letter {
+.post #markdown p:first-of-type:first-child::first-letter,
+.jdb-lettrine:first-of-type:first-child::first-letter {
   float:left;
   font-size: 4.5em;
   line-height: 100%;
@@ -379,10 +382,12 @@ footer .footer__copy {
  text-decoration: none
 }
 
-.image-link {
+.jdb-image-zoom {
   cursor: zoom-in;
 }
-
+#small-screen-menu .jdb-accordion-none > .jdb-bar-block .jdb-bar-item {
+  border-left: 3px solid var(--theme-color);
+}
 #instagram-frame * {
   -webkit-transition: -webkit-transform .3s ease-in-out;
           transition: -webkit-transform .3s ease-in-out;

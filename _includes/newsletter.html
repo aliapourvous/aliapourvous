@@ -1,9 +1,5 @@
 <div class="news-container">
-  {% for link in site.data.links %}
-    {% if link.formations %}
-      <a class="jdb-btn jdb-block {{ include.class }}" href="{{ link.formations }}" target="_blank">
-        S'inscrire aux newsletters
-      </a>
-    {% endif%}
-  {% endfor %}
+  <a class="jdb-btn jdb-block jdb-theme jdb-round {{ include.class }}" href="{{ site.data.links.formations }}" target="_blank">
+    <i class="fa fa-envelope" aria-hidden="true"></i>  S'inscrire aux newsletters
+  </a>
 </div>

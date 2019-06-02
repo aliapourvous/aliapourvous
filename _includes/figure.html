@@ -1,5 +1,5 @@
 <figure class="{{ include.figure_class }}">
-  <a href="{{ include.src }}">
+  <a class="jdb-image-zoom" href="{{ include.src }}">
     <img class="{{ include.img_class }}" src="{{ include.src }}" alt="{{ include.alt }}"/>
     {% if include.caption %}
       <figcaption><small>{{ include.caption | markdownify }}</small></figcaption>
