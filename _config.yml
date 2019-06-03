@@ -14,7 +14,7 @@ name        : Alia Elesse
 title       : "Coucou! C’est Alia & C pour vous!"
 description : >
   Je m'appelle Alia Elesse. Je suis une créatrice de contenu, une entrepreneure créative.
-url         : https://www.aliapourvous.com/
+url         : https://www.aliapourvous.com
 
 # Site/SEO settings
 email            : welcome@aliapourvous.com
@@ -56,7 +56,6 @@ regenerate          : true
 incremental         : true
 plugins:
   - jekyll-paginate
-  - jekyll-sitemap
   - jekyll-watch
   - jekyll-minifier # from https://github.com/digitalsparky/jekyll-minifier
   - jekyll-redirect-from

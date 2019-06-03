@@ -17,7 +17,6 @@ gem "jekyll", "~> 3.8.1"
 # If you have any plugins, put them here!
 group :jekyll_plugins do
   gem "jekyll-paginate"
-  gem "jekyll-sitemap"
   gem "jekyll-watch"
   gem "jekyll-minifier"
   gem "jekyll-redirect-from"
