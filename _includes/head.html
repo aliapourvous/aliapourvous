@@ -23,11 +23,11 @@
     "url"       : "{{ site.url }}",
     "image"     : "{{ site.default_img | prepend: site.baseurl }}",
     "sameAs": [
-      {% if site.social.facebook %}"https://www.facebook.com/{{ site.social.facebook }}",{% endif %}
-      {% if site.social.instagram %}"https://instagram.com/{{ site.social.instagram }}",{% endif %}
-      {% if site.social.twitter %}"https://twitter.com/{{ site.social.twitter }}",{% endif %}
-      {% if site.social.youtube %}"https://youtube.com/{{ site.social.youtube }}",{% endif %}
-      {% if site.social.linkedin %}"https://www.linkedin.com/in/{{ site.social.linkedin }}",{% endif %}
+      {% if site.social.facebook %}"{{ site.social.facebook }}",{% endif %}
+      {% if site.social.instagram %}"{{ site.social.instagram }}",{% endif %}
+      {% if site.social.twitter %}"{{ site.social.twitter }}",{% endif %}
+      {% if site.social.youtube %}"{{ site.social.youtube }}",{% endif %}
+      {% if site.social.linkedin %}"{{ site.social.linkedin }}",{% endif %}
     ]
   }
 </script>
