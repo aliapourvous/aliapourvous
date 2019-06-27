@@ -31,7 +31,7 @@ collections:
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Meta image", name: "image", widget: "image", required: false}
       - {label: "Theme color for Chrome (#cdcdcd)", name: "theme_color", widget: "string", required: false, hint: "The color of the URL bar on Chrome on mobile."}
-      - {label: "Redirect from", name: "redirect_from", widget: "string", required: false, hint: "URL to redirect from. Ex.: /building-project. If you open this link, you'll be redirected  to the current post."}
+      # - {label: "Redirect from", name: "redirect_from", widget: "string", required: false, hint: "URL to redirect from. Ex.: /building-project. If you open this link, you'll be redirected  to the current post."}
   - name: "page" # Used in routes, ie.: /admin/collections/:slug/edit
     label: "Pages (BETA)" # Used in the UI, ie
     label_singular: "Page" # Used in the UI, ie.: "New Post"
