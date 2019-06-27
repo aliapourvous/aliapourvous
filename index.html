@@ -2,6 +2,22 @@
 layout: default
 permalink: /
 ---
+
+<style type="text/css">
+  #section-nav-caontainer .jdb-row-padding a {
+    background-position: center;
+    background-size: cover;
+    border: 10px double #ccc;
+    height: 250px;    
+  }
+  #section-nav-caontainer .jdb-row-padding a .jdb-display-middle {
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 6px 10px;
+    opacity: 0.5;
+  }
+</style>
+
 <section class="intro jdb-theme jdb-padding-64">
   <div class="grid jdb-display-container">
     <div class="jdb-container jdb-padding-64" style="max-width:1234px; margin:auto">
@@ -39,9 +55,37 @@ permalink: /
 
 <div class="jdb-padding-32"></div>
 
+<section class="jdb-section jdb-content">
+  
+</section>
+
 <section id="articles" class="posts jdb-white">
   <div class="jdb-row-padding jdb-white jdb-content">
     <div class="jdb-col jdb-twothird l8-s12">
+      <div class="jdb-justify">
+        <img class="jdb-left jdb-margin-right" src="{{ '/assets/images/P1000006.jpg' }}" alt="" style="max-width:300px">
+
+        <p>Coucou c'est <a href="https://href.li/?https://youtube.com/aliamusik" target="_blank">Alia & c'est pour vous</a> est un programme de plusieurs vidéos reprenant différentes différents univers que j'explore que ce soit dans le cadre de mes fonctions, de mes hobbies ou de mes projets.</p>
+
+        <p></p>A travers les rubriques « DO, TIPS, TOOLS », les storytime & les lookbooks des filles d'Elodie, je vous plonge dans un univers à la fois artistique, spirituel & intellectuel car l'un n'exclut pas l'autre mais s'emboîtent dans une parfaite harmonie, une belle fusion qui nous rappelle la citation d'Albert Einstein</p>
+
+
+        <div class="jdb-panel jdb-right-align jdb-serif jdb-xlarge">
+          <i> La créativité, c'est l'intelligence qui s'amuse. <i class="fa fa-quote-right" aria-hidden="true"></i></i>
+        </div>
+
+        <p>JE VOUDRAIS :</p>
+        <ul class="jdb-ul">
+          <li><i class="fa fa-dot-circle-o" aria-hidden="true"></i> Investir dans l'innovation, l'identité et la créativité de la jeunesse européenne</li>
+          <li><i class="fa fa-dot-circle-o" aria-hidden="true"></i> Participer au développement d'une jeunesse  entreprenante & multiculturelle</li>
+          <li><i class="fa fa-dot-circle-o" aria-hidden="true"></i> Bannir la peur de l'inconnu</li>
+          <li><i class="fa fa-dot-circle-o" aria-hidden="true"></i> Diriger dans un esprit de service</li>
+          <li><i class="fa fa-dot-circle-o" aria-hidden="true"></i> Apprendre à construire ensemble malgré les différences d'opinion ou de cultures</li>
+        </ul>
+      </div>
+
+      <div class="jdb-padding-32"><hr/></div>
+
       <h3 class="posts__title jdb-center jdb-bold">
         <span>Articles récents</span> - <a href="{{ '/blog' | prepend: site.baseurl }}"><u>Blog</u></a>
       </h3>
@@ -88,6 +132,35 @@ permalink: /
         {% include newsletter.html class="jdb-round jdb-theme" %}
       </div>
     </div>
+  </div>
+</section>
+
+<section class="jdb-section" id="section-nav-caontainer">
+  <div class="jdb-row-padding">
+    <a class="jdb-quarter jdb-padding-64 jdb-display-container jdb-red" href="https://www.youtube.com/user/Aliamusik"
+      target="_blank" style="background-image:url({{ '/assets/images/me-P1000034.jpg' }});">
+      <div class="jdb-display-middle jdb-red">
+        <span>VIDEOS</span>
+      </div>
+    </a>
+    <a class="jdb-quarter jdb-padding-64 jdb-display-container jdb-green" href="{{ '/#' }}"
+      style="background-image:url({{ '/assets/images/img-podcast-5674552.jpeg' }});">
+      <div class="jdb-display-middle jdb-black">
+        <span>PODCAST</span>
+      </div>
+    </a>
+    <a class="jdb-quarter jdb-padding-64 jdb-display-container jdb-gray" href="{{ '/ressources/' }}"
+      style="background-image:url({{ '/assets/images/img-books-89645866.jpeg' }});">
+      <div class="jdb-display-middle jdb-black">
+        <span>RESSOURCES</span>
+      </div>
+    </a>
+    <a class="jdb-quarter jdb-padding-64 jdb-display-container jdb-sand" href="https://youtu.be/_E4pE-oDvpU"
+      style="background-image:url({{ '/assets/images/img-casque-jaune.jpeg' }});">
+      <div class="jdb-display-middle jdb-yellow">
+        <span>MUSIQUE</span>
+      </div>
+    </a>
   </div>
 </section>
 
