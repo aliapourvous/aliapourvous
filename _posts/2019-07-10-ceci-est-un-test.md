@@ -2,12 +2,12 @@
 layout: post
 noindex: false
 comments: true
-title: qdds
-date: '2019-07-10 04:45:01'
+title: 'Ceci est un test '
+date: '2019-07-10 04:07:38'
 thumbnail: /assets/images/posts/kinshasa.jpg
-category: trst
+feature_text: Lorem i
 tags:
-  - fgh
+  - test
 image: /assets/images/posts/kinshasa.jpg
 ---
-dqsdfc
+**Lorem** is _best_
