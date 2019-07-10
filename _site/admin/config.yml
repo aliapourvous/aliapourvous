@@ -13,7 +13,10 @@ collections:
     create: true # Allow users to create new documents in this collection
     extension: md # File extension
     show_preview_links: true # Show Preview Links
-    preview_path: preview/{{year}}-{{month}}-{{day}}-{{slug}}_dev # Configuring preview paths
+    editor:
+      preview: true
+    publish_mode: editorial_workflow
+    preview_path: /blog/preview/{{slug}}_draft # Configuring preview paths
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
       - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
@@ -23,10 +26,10 @@ collections:
       - {label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD hh:mm:ss"}
       - {label: "Featured Image (Upload)", name: "thumbnail", widget: "image", required: false, hint: "The image displayed in the blog thread. If it's on your site."}
       - {label: "Featured Image (URL)", name: "thumbnail", widget: "string", required: false, hint: "The image displayed in the blog thread. If it's an external file."}
-      - {label: "Featured text", name: "feature_text", widget: "markdown", required: false}
+      - {label: "Featured text (Description)", name: "feature_text", widget: "markdown", required: false}
       - {label: "Excerpt", name: "excerpt", widget: "string", required: false}
       # - {label: "Rating (scale of 1-5)", name: "rating", widget: "number"}
-      - {label: "Category", name: "category", widget: "string", required: false}
+      # - {label: "Category", name: "category", widget: "string", required: false}
       - {label: "Tags", name: "tags", widget: "list", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Meta image", name: "image", widget: "image", required: false}
