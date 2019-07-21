@@ -7,11 +7,11 @@
 body {
   font-family: var(--font-family);
   color: rgba(14, 30, 37, 0.76);
-  background: #fff;
-  font-size: 1.2rem;
+  background-color: #fff;
+  font-size: 1.1rem; /*1.2rem*/
 }
 body.inverse {
-  background: #0e1e25;
+  background-color: #0e1e25;
   color: rgba(255,255,255,.9);
 }
 
@@ -208,7 +208,7 @@ a {word-break: normal}
 
 /* CUSTOMS */
 .jdb-top-header {
-  background: #5dbcd2;
+  background-color: #5dbcd2;
 }
 
 .jdb-progress-containerfx {
@@ -340,7 +340,7 @@ footer .footer__copy {
   grid-column-gap: 1px;
 }
 .pagination .pagination__link {
-  background: var(--theme-color);
+  background-color: var(--theme-color);
   color: #fff;
   font-size: 19px;
   padding: 32px;
@@ -405,7 +405,7 @@ footer .footer__copy {
 }
 
 #instagram-frame .jdb-image:hover {
-  transform: rotate(8deg);
+  transform: rotate(5deg);
 }
 
 #instagram-frame .insta-video::before {

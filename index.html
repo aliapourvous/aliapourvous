@@ -28,7 +28,7 @@ permalink: /
           </h2>
         </div>
         <div class="jdb-col jdb-quarter jdb-center jdb-hide-small">
-          {% include figure.html src="/assets/images/me-playing-guitare.jpg" img_class="jdb-circle jdb-opacity-min" %}
+          {% include figure.html src="/assets/images/me-playing-guitare.jpg" img_class="jdb-circle jdb-opacity-min jdb-border" %}
           <a class="jdb-btn jdb-round jdb-theme-action" href="{{ '/a-propos' | relative_url }}">
             En savoir plus <i class="fa fa-angle-double-right" aria-hidden="true"></i>
           </a>
@@ -59,28 +59,31 @@ permalink: /
   <div class="jdb-row-padding jdb-white jdb-content">
     <div class="jdb-col jdb-twothird l8-s12">
       <div class="jdb-justify">
-        <img class="jdb-left jdb-margin-right" src="{{ '/assets/images/P1000006.jpg' }}" alt="" style="max-width:300px">
+        <!-- <img class="jdb-left jdb-round" src="{{ '/assets/images/P1000006.jpg' }}" alt="" style="max-width:600px; width:100%">
+        <div class="jdb-show-inline-block jdb-hide-small" style="height:11em; padding:8px; float: left;"></div> -->
 
         <p>Coucou c'est <a href="https://href.li/?https://youtube.com/aliamusik" target="_blank">Alia & c'est pour vous</a> est un programme de plusieurs vidéos reprenant différentes différents univers que j'explore que ce soit dans le cadre de mes fonctions, de mes hobbies ou de mes projets.</p>
 
-        <p>A travers les rubriques « DO, TIPS, TOOLS », les storytime & les lookbooks des filles d'Elodie, je vous plonge dans un univers à la fois artistique, spirituel & intellectuel car l'un n'exclut pas l'autre mais s'emboîtent dans une parfaite harmonie, une belle fusion qui nous rappelle la citation d'Albert Einstein</p>
-
-
+        <p>A travers les rubriques « DO, TIPS, TOOLS », les storytime & les lookbooks des filles d'Elodie, je vous plonge dans un univers à la fois artistique, spirituel & intellectuel car l'un n'exclut pas l'autre mais s'emboîtent dans une parfaite harmonie, une belle fusion qui nous rappelle la citation d'Albert Einstein :</p>
+      </div>
+      <div>
         <div class="jdb-panel jdb-right-align jdb-serif jdb-xlarge">
           <i>La créativité, c'est l'intelligence qui s'amuse. <i class="fa fa-quote-right" aria-hidden="true"></i></i>
         </div>
 
+        <hr/>
+
         <p>JE VOUDRAIS :</p>
         <ul class="jdb-ul">
-          <li><i class="fa fa-dot-circle-o" aria-hidden="true"></i> Investir dans l'innovation, l'identité et la créativité de la jeunesse européenne</li>
-          <li><i class="fa fa-dot-circle-o" aria-hidden="true"></i> Participer au développement d'une jeunesse  entreprenante & multiculturelle</li>
-          <li><i class="fa fa-dot-circle-o" aria-hidden="true"></i> Bannir la peur de l'inconnu</li>
-          <li><i class="fa fa-dot-circle-o" aria-hidden="true"></i> Diriger dans un esprit de service</li>
-          <li><i class="fa fa-dot-circle-o" aria-hidden="true"></i> Apprendre à construire ensemble malgré les différences d'opinion ou de cultures</li>
+          <li><i class="fa fa-fw fa-dot-circle-o" aria-hidden="true"></i> Investir dans l'innovation, l'identité et la créativité de la jeunesse européenne</li>
+          <li><i class="fa fa-fw fa-dot-circle-o" aria-hidden="true"></i> Participer au développement d'une jeunesse entreprenante & multiculturelle</li>
+          <li><i class="fa fa-fw fa-dot-circle-o" aria-hidden="true"></i> Bannir la peur de l'inconnu</li>
+          <li><i class="fa fa-fw fa-dot-circle-o" aria-hidden="true"></i> Diriger dans un esprit de service</li>
+          <li><i class="fa fa-fw fa-dot-circle-o" aria-hidden="true"></i> Apprendre à construire ensemble malgré les différences d'opinion ou de cultures</li>
         </ul>
       </div>
 
-      <div class="jdb-padding-32"><hr/></div>
+      <div class="jdb-padding-16"><hr/></div>
 
       <h3 class="posts__title jdb-center jdb-bold">
         <span>Articles récents</span> - <a href="{{ '/blog' | prepend: site.baseurl }}"><u>Blog</u></a>
@@ -108,16 +111,16 @@ permalink: /
 
     <!-- Right column -->
     <div class="jdb-col jdb-third x-l4">
-      <div class="jdb-panel jdb-light-gray jdb-margin-bottom jdb-margin-0">
+      <div class="jdb-section jdb-light-gray jdb-margin-bottom jdb-margin-0">
         {% include social-buttons-list.html %}
       </div>
       <div class="jdb-dark-gray__">
         <div class="jdb-container jdb-padding jdb-theme">
-          <h4><i class="fa fa-bullhorn" aria-hidden="true"></i> Publicité</h4>
+          <div><i class="fa fa-bullhorn fa-fw" aria-hidden="true"></i> Publicité</div>
         </div>
         <div class="jdb-container jdb-white">
           <div class="jdb-container jdb-display-container jdb-light-grey jdb-section" style="height:200px; background-image:url({{ '/assets/images/no-image.png' | prepend: site.baseurl }});background-position:right; background-size:contain; background-repeat:no-repeat">
-            <span class="jdb-display-leftmiddle jdb-margin-left" style="max-width:140px">Aucune publicité pour le moment</span>
+            <span class="jdb-display-leftmiddle jdb-margin-left jdb-hide-medium" style="max-width:140px">Aucune publicité pour le moment</span>
           </div>
         </div>
       </div>
@@ -165,7 +168,7 @@ permalink: /
     {% if site.social.instagram %}
       <div id="instagram">
         <div class="jdb-container jdb-theme">
-          <p class="jdb-xlarge jdb-center">
+          <p class="jdb-large jdb-center">
             <i class="fa fa-instagram jdb-text-pink" aria-hidden="true"></i> 
               Suivez <i><a class="link" href="{{ site.social.instagram }}" target="_blank">
                 @{{ site.social.instagram | split: ".com/" | last }}</a></i> sur instagram
@@ -177,8 +180,8 @@ permalink: /
   </section>
 {% endif %}
 
-<section class="jdb-padding-64 jdb-black jdb-center jdb-theme">
-  <a class="jdb-xxlarge link" href="{{ '/contact' | prepend: site.baseurl }}">
-    <span class="jdb-bold">Contactez-moi</span>
+<section class="jdb-padding-32 jdb-black jdb-center jdb-theme-action">
+  <a class="jdb-xlarge link" href="{{ '/contact' | prepend: site.baseurl }}">
+    <span>Contactez-moi</span>
   </a>
 </section>

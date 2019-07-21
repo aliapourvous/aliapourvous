@@ -62,12 +62,12 @@ tag_cloud_limit: 3
         </div>
       </div>
       <div class="jdb-col jdb-third x-l4">
-        <div class="jdb-panel jdb-light-gray jdb-margin-bottom jdb-margin-0">
-            {% include social-buttons-list.html %}
+        <div class="jdb-section jdb-light-gray jdb-margin-bottom jdb-margin-0">
+          {% include social-buttons-list.html %}
         </div>
         <div class="jdb-dark-gray__">
           <div class="jdb-container jdb-padding jdb-theme">
-            <h4><i class="fa fa-bullhorn" aria-hidden="true"></i> Publicité</h4>
+            <div><i class="fa fa-bullhorn" aria-hidden="true"></i> Publicité</div>
           </div>
           <div class="jdb-container jdb-white">
             <div class="jdb-container jdb-display-container jdb-light-grey jdb-section" style="height:200px; background-image:url({{ '/assets/images/no-image.png' | prepend: site.baseurl }});background-position:right; background-size:contain; background-repeat:no-repeat">
@@ -103,8 +103,8 @@ tag_cloud_limit: 3
   </div>
 </section>
 
-<section class="jdb-padding-64 jdb-theme-d5 jdb-center">
-  <a class="jdb-xxlarge link jdb-bold" href="{{ '/contact' | prepend: site.baseurl }}">
+<section class="jdb-padding-32 jdb-theme-action jdb-center">
+  <a class="jdb-xlarge link" href="{{ '/contact' | prepend: site.baseurl }}">
     <span class="cta__text">Contactez-moi</span>
   </a>
 </section>

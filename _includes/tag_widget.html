@@ -1,6 +1,6 @@
 <div class="jdb__tag-widget {% if include.class %}{{ include.class }}{% endif %}">
   <div class="jdb-padding jdb-theme">
-    <h4><i class="fa fa-tags" aria-hidden="true"></i> Tags</h4>
+    <div><i class="fa fa-tags fa-fw" aria-hidden="true"></i> Tags</div>
   </div>
   <div class="jdb-padding jdb-white jdb-border">
     {% if site.tags.size > 0 %}
@@ -15,7 +15,7 @@
         </a>
       {% endif %}
     {% else %}
-      <div class="jdb-pale-red jdb-padding-small">
+      <div class="jdb-pale-red jdb-padding-small jdb-medium">
         Il n'y a aucun tag défini dans l'ensemble des articles de <i>{{ site.title }}</i>.
       </div>
     {% endif %}
