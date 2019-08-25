@@ -4,14 +4,18 @@
 <meta content="{{ site.title }}" name="copyright">
 
 <!-- Search engines -->
-{% if page.noindex %}
-  <meta name="robots" content="noindex,nofollow">
-  <meta name="googlebot" content="noindex,nofollow">
+{% if page.url == "/" %}
+  <meta name="robots" content="index,follow">
+  <meta name="googlebot" content="index,follow">
 {% else %}
-  <meta name="robots" content="index,nofollow">
-  <meta name="googlebot" content="index,nofollow">
+  {% if page.noindex %}
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="googlebot" content="noindex,nofollow">
+  {% else %}
+    <meta name="robots" content="index,nofollow">
+    <meta name="googlebot" content="index,nofollow">
+  {% endif %}
 {% endif %}
-
 
 <script type="application/ld+json">
   {
