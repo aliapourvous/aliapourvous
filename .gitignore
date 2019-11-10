@@ -7,3 +7,5 @@ _site/
 node_modules/
 thumbx.txt
 Gemfile.lock
+# Local Netlify folder
+.netlify
