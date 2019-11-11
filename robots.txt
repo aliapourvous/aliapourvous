@@ -1,5 +1,10 @@
 ---
 layout: null
+allows:
+  - /
+  - /a-propos
+  - /contact
+  - /blog
 disallows:
   - /*
   - /404.html
@@ -10,5 +15,8 @@ User-agent: *
 {% for disallowed in page.disallows -%}
 Disallow: {{ disallowed }}
 {% endfor %}
+{% for allowed in page.allows -%}
+Disallow: {{ allowed }}
+{% endfor %}
 Sitemap: {{ "sitemap.xml" | absolute_url }}
-Host: www.we-rl.xyz
+Host: aliapourvous.com
