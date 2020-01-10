@@ -5,7 +5,7 @@
   <div class="jdb-padding jdb-white jdb-border">
     {% if site.tags.size > 0 %}
       {% for tag in site.tags limit:page.tag_cloud_limit or include.tag_cloud_limit %}
-        <a href="{{ '/archives#tags' }}">
+        <a href="/archives#tags">
           <span class="jdb-tag jdb-margin-bottom jdb-theme">{{ tag[0] }}</span>
         </a>
       {% endfor %}

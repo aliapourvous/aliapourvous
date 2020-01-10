@@ -16,8 +16,11 @@ description : >
   Je m'appelle Alia Elesse. Je suis une créatrice de contenu, une entrepreneure créative.
 url         : https://www.aliapourvous.com
 
+author:
+  name: Alia Elesse
+  email: welcome@aliapourvous.com
+
 # Site/SEO settings
-email            : welcome@aliapourvous.com
 google_analytics : # UA-86918712-1
 disqus_id        : aliapourvous
 mailchimp_list   : false # MailChimp list URL
@@ -73,7 +76,6 @@ assets:
   sources:
     - _assets/scss
     - _assets/js
-    # - _assets/img
   compress:
     css : sass
     js  : uglifier
