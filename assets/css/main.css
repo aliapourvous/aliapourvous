@@ -371,9 +371,6 @@ footer .footer__copy {
   line-height: 100%;
   padding: 0 0.05em 0 0;
 }
-.post #markdown {
-  text-align: justify;
-}
 .post .mast__content {
   width: 100vw;
   max-width: var(--main-max-width);

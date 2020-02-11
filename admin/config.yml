@@ -2,17 +2,16 @@ backend:
   name: github
   repo: aliapourvous/aliapourvous
   # Set to false to prevent transforming images in media gallery view
-  use_large_media_transforms_in_media_library: false
+  use_large_media_transforms_in_media_library: true
 
 media_folder: "assets/images/posts"
-locale: "fr"
 
 collections:
   - name: "blog"  # Used in routes, e.g., /admin/collections/blog
-    label: "Article" # Used in the UI
+    label: "Post" # Used in the UI
     folder: "_posts/" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
-    extension: md # File extension
+    extension: html # File extension
     show_preview_links: true # Show Preview Links
     editor:
       preview: true
@@ -21,34 +20,35 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
       - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
-      - {label: "Ne pas indexer", name: "noindex", widget: "boolean", hint: "Cochez cette option pour cacher cet article de moteurs de recherche.", default: false}
-      - {label: "Accepter les commentaires", name: "comments", widget: "boolean", hint: "Cochez cette option pour afficher le module de commentaire en bas de l'article.", default: true}
-      - {label: "Titre", name: "title", widget: "string", required: true, hint: "Le titre de l'article"}
-      - {label: "Date de publication", name: "date", widget: "datetime", format: "YYYY-MM-DD hh:mm:ss"}
-      - {label: "Image en vedette (sélectionner ou importer)", name: "thumbnail", widget: "image", required: false, hint: "L'image affichée dans le fil du blog."}
-      - {label: "Image en vedette (URL)", name: "thumbnail", widget: "string", required: false, hint: "L'image affichée dans le fil du blog. S'il s'agit d'un fichier externe."}
-      # - {label: "Texte en vedette (Description)", name: "feature_text", widget: "markdown", required: false}
-      - {label: "Extrait", name: "excerpt", widget: "string", required: false}
-      - {label: "Catégorie", name: "category", widget: "string", required: false, hint: "Une seule catérogie. Mots séparés un tiret."}
-      - {label: "Tags", name: "tags", widget: "list", required: false, hint: "Liste des mots séparés par une virgule."}
-      - {label: "Corps de l'article", name: "body", widget: "markdown"}
+      - {label: "Do not index", name: "noindex", widget: "boolean", hint: "Check to make this post visible from search engines.", default: false}
+      - {label: "Accept comments", name: "comments", widget: "boolean", hint: "Check to display comment module in the post.", default: true}
+      - {label: "Title", name: "title", widget: "string", required: true, hint: "The post title"}
+      - {label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD hh:mm:ss"}
+      - {label: "Featured Image (Upload)", name: "thumbnail", widget: "image", required: false, hint: "The image displayed in the blog thread. If it's on your site."}
+      - {label: "Featured Image (URL)", name: "thumbnail", widget: "string", required: false, hint: "The image displayed in the blog thread. If it's an external file."}
+      - {label: "Featured text (Description)", name: "feature_text", widget: "markdown", required: false}
+      - {label: "Excerpt", name: "excerpt", widget: "string", required: false}
+      # - {label: "Rating (scale of 1-5)", name: "rating", widget: "number"}
+      # - {label: "Category", name: "category", widget: "string", required: false}
+      - {label: "Tags", name: "tags", widget: "list", required: false, hint: "Word list separated by space."}
+      - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Meta image", name: "image", widget: "image", required: false}
-      - {label: "Couleur de theme pour Chrome (#cdcdcd)", name: "theme_color", widget: "string", required: false, hint: "La couleur de la barre d'URL de Chrome sur mobile."}
+      - {label: "Theme color for Chrome (#cdcdcd)", name: "theme_color", widget: "string", required: false, hint: "The color of the URL bar on Chrome on mobile."}
       # - {label: "Redirect from", name: "redirect_from", widget: "string", required: false, hint: "URL to redirect from. Ex.: /building-project. If you open this link, you'll be redirected  to the current post."}
-  # - name: "page" # Used in routes, ie.: /admin/collections/:slug/edit
-  #   label: "Pages (BETA)" # Used in the UI, ie
-  #   label_singular: "Page" # Used in the UI, ie.: "New Post"
-  #   folder: "/pages" # The path to the folder where the documents are stored
-  #   create: true # Allow users to create new documents in this collection
-  #   slug: "{{slug}}"
-  #   extension: md
-  #   fields: # The fields each document in this collection have
-  #     - {label: "Layout", name: "layout", widget: "hidden", default: "page"}
-  #     - {label: "Title", name: "title", widget: "string", tagname: "h1"}
-  #     - {label: "Do not index", name: "noindex", widget: "boolean", default: false}
-  #     - {label: "Permalink", name: "permalink", widget: "string", required: false}
-  #     - {label: "Featured image", name: "feature_image", widget: "image", required: false}
-  #     - {label: "Feature text", name: "feature_text", widget: "markdown", required: false}
-  #     - {label: "Excerpt", name: "excerpt", widget: "string", required: false}
-  #     - {label: "Body", name: "body", widget: "markdown"}
-  #     - {label: "Meta image", name: "image", widget: "image", required: false}
+  - name: "page" # Used in routes, ie.: /admin/collections/:slug/edit
+    label: "Pages (BETA)" # Used in the UI, ie
+    label_singular: "Page" # Used in the UI, ie.: "New Post"
+    folder: "/pages" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}"
+    extension: md
+    fields: # The fields each document in this collection have
+      - {label: "Layout", name: "layout", widget: "hidden", default: "page"}
+      - {label: "Title", name: "title", widget: "string", tagname: "h1"}
+      - {label: "Do not index", name: "noindex", widget: "boolean", default: false}
+      - {label: "Permalink", name: "permalink", widget: "string", required: false}
+      - {label: "Featured image", name: "feature_image", widget: "image", required: false}
+      - {label: "Feature text", name: "feature_text", widget: "markdown", required: false}
+      - {label: "Excerpt", name: "excerpt", widget: "string", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Meta image", name: "image", widget: "image", required: false}
