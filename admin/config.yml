@@ -35,20 +35,20 @@ collections:
       - {label: "Meta image", name: "image", widget: "image", required: false}
       - {label: "Theme color for Chrome (#cdcdcd)", name: "theme_color", widget: "string", required: false, hint: "The color of the URL bar on Chrome on mobile."}
       # - {label: "Redirect from", name: "redirect_from", widget: "string", required: false, hint: "URL to redirect from. Ex.: /building-project. If you open this link, you'll be redirected  to the current post."}
-  - name: "page" # Used in routes, ie.: /admin/collections/:slug/edit
-    label: "Pages (BETA)" # Used in the UI, ie
-    label_singular: "Page" # Used in the UI, ie.: "New Post"
-    folder: "/pages" # The path to the folder where the documents are stored
-    create: true # Allow users to create new documents in this collection
-    slug: "{{slug}}"
-    extension: md
-    fields: # The fields each document in this collection have
-      - {label: "Layout", name: "layout", widget: "hidden", default: "page"}
-      - {label: "Title", name: "title", widget: "string", tagname: "h1"}
-      - {label: "Do not index", name: "noindex", widget: "boolean", default: false}
-      - {label: "Permalink", name: "permalink", widget: "string", required: false}
-      - {label: "Featured image", name: "feature_image", widget: "image", required: false}
-      - {label: "Feature text", name: "feature_text", widget: "markdown", required: false}
-      - {label: "Excerpt", name: "excerpt", widget: "string", required: false}
-      - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Meta image", name: "image", widget: "image", required: false}
+  # - name: "page" # Used in routes, ie.: /admin/collections/:slug/edit
+  #   label: "Pages (BETA)" # Used in the UI, ie
+  #   label_singular: "Page" # Used in the UI, ie.: "New Post"
+  #   folder: "/pages" # The path to the folder where the documents are stored
+  #   create: true # Allow users to create new documents in this collection
+  #   slug: "{{slug}}"
+  #   extension: md
+  #   fields: # The fields each document in this collection have
+  #     - {label: "Layout", name: "layout", widget: "hidden", default: "page"}
+  #     - {label: "Title", name: "title", widget: "string", tagname: "h1"}
+  #     - {label: "Do not index", name: "noindex", widget: "boolean", default: false}
+  #     - {label: "Permalink", name: "permalink", widget: "string", required: false}
+  #     - {label: "Featured image", name: "feature_image", widget: "image", required: false}
+  #     - {label: "Feature text", name: "feature_text", widget: "markdown", required: false}
+  #     - {label: "Excerpt", name: "excerpt", widget: "string", required: false}
+  #     - {label: "Body", name: "body", widget: "markdown"}
+  #     - {label: "Meta image", name: "image", widget: "image", required: false}
