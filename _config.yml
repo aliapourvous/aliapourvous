@@ -21,7 +21,7 @@ author:
   email: welcome@aliapourvous.com
 
 # Site/SEO settings
-google_analytics : # UA-86918712-1
+google_analytics : UA-159004386-1
 disqus_id        : aliapourvous
 mailchimp_list   : false # MailChimp list URL
 ig_access_token  : "1038057777.1677ed0.3947ab2dcea24791b60f6262a81b14f4"
@@ -56,7 +56,7 @@ keep_files          : [".git", ".svn"]
 markdown_ext        : "markdown,mkdown,mkdn,mkd,md"
 markdown            : kramdown
 regenerate          : true
-incremental         : true
+incremental         : false # Incremental build only re-builds posts and pages that have changed
 plugins:
   - jekyll-paginate
   - jekyll-watch
@@ -108,7 +108,7 @@ limit         : 6
 # sort_reverse: true
 
 # Collections
-collections:
+# collections:
   # work:
   #   output: true
   #   permalink: /:path/
@@ -119,12 +119,6 @@ collections:
   #   output: true
 
 defaults:
-  # All categories
-  - scope:
-      path: ""
-      type: category
-    values:
-      layout: "category"
   # All posts
   - scope:
       path: "_posts"

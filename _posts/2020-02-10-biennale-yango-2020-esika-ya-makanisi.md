@@ -6,8 +6,13 @@ title: Biennale Yango 2020/Esika ya makanisi
 date: '2020-02-07 11:00:00'
 thumbnail: /assets/images/posts/84687527_2567038150241025_3541155399740686336_o.jpg
 feature_text: ''
-image: ''
+tags:
+  - Africa
+  - Artiste
+  - Globe trotteuse
+image: /assets/images/posts/84915861_2584580078467488_2546976208516546560_o.jpg
 ---
+
 Les lumières s'éteignent… Place à l'écran…
 
 Sankara…Quel homme ! C'était le seul mot qui m'est sorti de la bouche quand le documentaire « Thomas Sankara : l'espoir assassiné » a pris fin. Un échange de regards avec Yala Kisukidi, co-commissaire Yango, qui était à mes côtés me laissait sous-entendre que la même pensée venait de la visiter.

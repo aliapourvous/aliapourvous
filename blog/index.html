@@ -14,7 +14,7 @@ tag_cloud_limit: 3
         <div class="page_number jdb-center jdb-margin-bottom">
           Page: {{ paginator.page }} sur {{ paginator.total_pages }}
         </div>
-        <p class="jdb-left-align" style="max-width:450px;margin:auto">Exploration de mes intérêts. <a class="s-link" href="#inscription">Abonnez-vous</a> à ma newsletter pour ne rien manquer.</p>
+        <p class="jdb-left-align" style="max-width:450px;margin:auto">Exploration de mes intérêts. <a href="#inscription">Abonnez-vous</a> à ma newsletter pour ne rien manquer.</p>
       </div>
     </div>
   </section>
@@ -78,7 +78,7 @@ tag_cloud_limit: 3
         <hr/>
         {% include tag_widget.html %}
         <hr/>
-        <div class="jdb-margin-bottom">
+        <div class="jdb-margin-bottom jdb-section" id="inscription">
           {% include newsletter.html class="jdb-white jdb-padding-small" %}
         </div>
       </div>
