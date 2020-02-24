@@ -1,5 +1,5 @@
-import CMS from "netlify-cms-app";
-import { fr } from "netlify-cms-locales";
+// import CMS from "netlify-cms-app";
+// import { fr } from "netlify-cms-locales";
 
 if (window.netlifyIdentity) {
   window.netlifyIdentity.on("init", user => {
@@ -11,4 +11,4 @@ if (window.netlifyIdentity) {
   });
 }
 
-CMS.registerLocale("fr", fr);
+// CMS.registerLocale("fr", fr);
