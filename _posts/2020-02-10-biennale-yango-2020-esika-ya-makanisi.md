@@ -8,7 +8,7 @@ thumbnail: /assets/images/posts/84687527_2567038150241025_3541155399740686336_o.
 tags:
   - Africa
   - Artiste
-  - Globe trotteuse
+  - Globe-trotteuse
 image: /assets/images/posts/84915861_2584580078467488_2546976208516546560_o.jpg
 ---
 Les lumières s'éteignent… Place à l'écran…
