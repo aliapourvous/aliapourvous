@@ -1,0 +1,81 @@
+---
+layout: page
+title: "My spiritual journey Podcast"
+description: Spiritual journey est née de la profonde conviction que ce que tu accomplis découle de ce en quoi tu crois.
+header_shadow: true
+image: /assets/images/me-spiritual-journey-1.jpg
+thumbnail: /assets/images/condenser-microphone.jpg
+---
+
+<style>
+  .podcasts-container iframe { max-width: 100%; }
+</style>
+
+<h1>My spiritual journey Podcast</h1>
+<div class="jdb-row">
+  <div class="jdb-col jdb-twothird">
+    <p><strong>Spiritual journey</strong> est née de la profonde conviction que ce que tu accomplis découle de ce en quoi tu crois.</p>
+    <p>Je suis une femme avant tout spirituelle dans ma démarche de la découverte de soi.</p>
+    <p>Serait-ce fou de croire que dans cette globalisation, nous restons unique et valorisé par ce qui se trouve à l'intérieur de nous ?</p>
+    <p>J'ose croire que l'entrepreneur créatif est une réponse à une demande. Il est une lampe qui s'illumine au milieu de la nuit. Découvrir la raison pour laquelle il brille, il n'y a rien de plus magnifique !</p>
+  </div>
+  <div class="jdb-col jdb-quarter">
+    <p>
+      <a class="jdb-image-zoom" href="/assets/images/me-spiritual-journey-1.jpg">
+        <img class="jdb-image jdb-mobile jdb-round jdb-hover-shadow" src="/assets/images/me-spiritual-journey-1.jpg" alt="Ma photo"/>
+      </a>
+    </p>
+  </div>
+</div>
+
+<hr class="jdb-hr"/>
+
+<div class="jdb-section jdb-center">
+  <a class="jdb-btn jdb-green jdb-round-large" href="https://open.spotify.com/show/1tVUjgf0tFywJ4SNUNmly8" target="_blank" rel="noopener noreferrer">
+    <div class="jdb-cell jdb-cell-middle">
+      <i class="fa fa-2x fa-fw fa-spotify" aria-hidden="true"></i>
+    </div>
+    <div class="jdb-cell jdb-cell-middle"> Écouter<span class="jdb-hide-small"> / s'abonner</span> sur Spotify</div>
+  </a>
+</div>
+
+<div class="podcasts-container"></div>
+
+<div class="jdb-section jdb-border-top">
+  <p class="jdb-small">Photo en-tête de <a href="https://www.pexels.com/fr-fr/@tommyclopez?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels" target="_blank" rel="noopener noreferrer">Tommy Lopez</a> provenant de <a href="https://www.pexels.com/fr-fr/photo/a-l-interieur-controleur-disque-ecran-765139/?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels" target="_blank" rel="noopener noreferrer">Pexels</a>.</p>
+</div>
+
+<script>
+  var $container = $(".podcasts-container");
+  $.getJSON("podcast-spriritual-journey.json").done(function(response) {
+    $(document).ready(function(){
+      var $item;
+
+      $.each(response, function (i, item) {
+        $item = "<div class='jdb-section'>" +
+          "<h3>" + item.published_date + "</h3>" +
+          "<div class='jdb-row-padding podcasts-container'>";
+
+        $.each(item.embedURLs, function (i, url) {
+          $item += "<div class='jdb-half'>" +
+            "<iframe src='" + url + "' height='102px' width='400px' frameborder='0' scrolling='no'></iframe>" +
+          "</div>";
+        });
+
+        $item += "</div></div>";
+        $container.append($item);
+      });
+    });
+  }).fail(function(){
+    $container.append(
+      $("<div>", { class: "jdb-panel jdb-pale-red jdb-round" }).append(
+        $("<p>").text("Oups ! Une erreur est survenue. Les podcasts sont indisponibles pour le moment.").prepend(
+          $("<i>", {
+            class: "fa fa-fw fa-info-circle",
+            "aria-hidden": true
+          })
+        )
+      )
+    );
+  });
+</script>
