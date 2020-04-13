@@ -30,12 +30,21 @@ thumbnail: /assets/images/condenser-microphone.jpg
 
 <hr class="jdb-hr"/>
 
-<div class="jdb-section jdb-center">
-  <a class="jdb-btn jdb-green jdb-round-large" href="https://open.spotify.com/show/1tVUjgf0tFywJ4SNUNmly8" target="_blank" rel="noopener noreferrer">
+<div class="jdb-section jdb-center jdb-focusable-buttons">
+  <button class="jdb-btn jdb-black jdb-round-large jdb-hide jdb-hide-small stop-autoplay">
+    <i class="fa fa-fw fa-pause" aria-hidden="true"></i> Intro
+  </button>
+  <a class="jdb-btn jdb-green jdb-round-large jdb-margin-4" href="https://open.spotify.com/show/1tVUjgf0tFywJ4SNUNmly8" target="_blank" rel="noopener noreferrer">
     <div class="jdb-cell jdb-cell-middle">
-      <i class="fa fa-2x fa-fw fa-spotify" aria-hidden="true"></i>
+      <i class="fa fa-2x fa-fw fa-spotify" aria-hidden="true" ></i>
     </div>
     <div class="jdb-cell jdb-cell-middle"> Écouter<span class="jdb-hide-small"> / s'abonner</span> sur Spotify</div>
+  </a>
+  <a class="jdb-btn jdb-teal jdb-round-large jdb-margin-4" href="https://anchor.fm/alia-elesse" target="_blank" rel="noopener noreferrer">
+    <div class="jdb-cell jdb-cell-middle">
+      <svg class="jdb-cell jdb-cell-middle" xmlns="http://www.w3.org/2000/svg" style="width:32px; height:25px;" viewBox="0 0 32 32"><g data-name="Anchor Fm"><path fill="#fff" d="M19.2 19A5.94 5.94 0 0 0 20 16v0a6.69 6.69 0 0 0-.2-1.53A6 6 0 0 0 17 10.8a1 1 0 0 0-1 1.74A3.92 3.92 0 0 1 17.85 15a0 0 0 0 1 0 0H8.72a2 2 0 1 0 0 2h9.13a3.71 3.71 0 0 1-.39 1A3.93 3.93 0 0 1 16 19.46a1 1 0 0 0 1 1.74A6.1 6.1 0 0 0 19.2 19zM20.75 22.4a1 1 0 0 0-1.42 0 8.31 8.31 0 0 1-1.83 1.4 1 1 0 0 0 1 1.74 11 11 0 0 0 2.24-1.72A1 1 0 0 0 20.75 22.4z"/><path fill="#fff" d="M17.5,8.21a9.09,9.09,0,0,1,3.48,12,1,1,0,0,0,.42,1.35,1,1,0,0,0,.46.11,1,1,0,0,0,.89-.53A11.12,11.12,0,0,0,18.5,6.47a1,1,0,1,0-1,1.74Z"/><path fill="#fff" d="M27.43,11.87A15.9,15.9,0,0,0,20,2.14a1,1,0,1,0-1,1.74,13.83,13.83,0,0,1,6.49,8.5A13.94,13.94,0,0,1,19,28.12a1,1,0,0,0,1,1.74A16.14,16.14,0,0,0,25.86,24,15.9,15.9,0,0,0,27.43,11.87Z"/></g></svg>
+    </div>
+    <div class="jdb-cell jdb-cell-middle">Écouter sur Anchor</div>
   </a>
 </div>
 
@@ -46,9 +55,27 @@ thumbnail: /assets/images/condenser-microphone.jpg
 </div>
 
 <script>
-  var $container = $(".podcasts-container");
-  $.getJSON("podcast-spriritual-journey.json").done(function(response) {
-    $(document).ready(function(){
+  $(document).ready(function(){
+    var $container = $(".podcasts-container");
+    var podcastIntro = new Audio("audios/podcast-intro.m4a");
+    podcastIntro.autoplay = true;
+    podcastIntro.loop = false;
+    podcastIntro.onended = function() {
+      $(".stop-autoplay .fa").addClass("fa-play").removeClass("fa-pause");
+    };
+
+    $(".stop-autoplay").click(function(event) {
+      event.preventDefault();
+      if (podcastIntro.paused) {
+        podcastIntro.play();
+        $(this).find(".fa").addClass("fa-pause").removeClass("fa-play");
+      } else {
+        podcastIntro.pause();
+        $(this).find(".fa").addClass("fa-play").removeClass("fa-pause");
+      }
+    });
+
+    $.getJSON("podcast-spriritual-journey.json").done(function(response) {
       var $item;
 
       $.each(response, function (i, item) {
@@ -65,17 +92,17 @@ thumbnail: /assets/images/condenser-microphone.jpg
         $item += "</div></div>";
         $container.append($item);
       });
-    });
-  }).fail(function(){
-    $container.append(
-      $("<div>", { class: "jdb-panel jdb-pale-red jdb-round" }).append(
-        $("<p>").text("Oups ! Une erreur est survenue. Les podcasts sont indisponibles pour le moment.").prepend(
-          $("<i>", {
-            class: "fa fa-fw fa-info-circle",
-            "aria-hidden": true
-          })
+    }).fail(function(){
+      $container.append(
+        $("<div>", { class: "jdb-panel jdb-pale-red jdb-round" }).append(
+          $("<p>").text("Oups ! Une erreur est survenue. Les podcasts sont indisponibles pour le moment.").prepend(
+            $("<i>", {
+              class: "fa fa-fw fa-info-circle",
+              "aria-hidden": true
+            })
+          )
         )
-      )
-    );
+      );
+    });
   });
 </script>
