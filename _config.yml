@@ -21,7 +21,6 @@ author:
   email: welcome@aliapourvous.com
 
 # Site/SEO settings
-google_analytics : UA-159004386-1
 disqus_id        : aliapourvous
 mailchimp_list   : false # MailChimp list URL
 ig_access_token  : "1038057777.1677ed0.3947ab2dcea24791b60f6262a81b14f4"
@@ -46,7 +45,7 @@ netlifycms: true
 # Add GA Id to enable Google Analytics tracking code in production builds
 analytics:
   google:
-    tracking_id: # UA-86918712-1
+    tracking_id: UA-159004386-1
     site_verification:
 
 # Build settings
