@@ -2,17 +2,16 @@
 layout: page
 title: Contact
 permalink: /contact
-redirect_from: /contactez-moi
 thumbnail: /assets/images/carte-belgique.png
 image: /assets/images/carte-belgique.png
 ---
 
 <div class="jdb-section" id="contact">
-  <h3 class="jdb-center jdb-bold jdb-theme jdb-round-xxlarge jdb-padding">
+  <h3 class="jdb-center jdb-bold jdb-theme jdb-round-lg jdb-padding">
     Comment me contacter ?
   </h3>
-  <div class="jdb-panel">
-    <div class="jdb-large jdb-margin-bottom">
+  <div>
+    <div class="jdb-margin-bottom">
       <i class="fa fa-map-marker fa-fw jdb-text-red jdb-xlarge jdb-margin-right" aria-hidden="true"></i> Bruxelles, BE<br/>
       {% if site.social.phone %}
         <i class="fa fa-phone fa-fw jdb-hover-text-black jdb-xlarge jdb-margin-right" aria-hidden="true"></i>
@@ -25,8 +24,8 @@ image: /assets/images/carte-belgique.png
         <a href="mailto:{{ site.social.email }}">{{ site.social.email }}</a><br/>
       {% endif %}
     </div>
-    <form class="rounded" action="/action_page.php" target="_blank" >
-      <div class="jdb-row-padding" style="margin:0 -16px 8px -16px">
+    <form class="rounded jdb-focusable-inputs" name="contact" netlify target="_blank" >
+      <div class="jdb-row-padding" style="margin:0 -8px 8px -8px">
         <div class="jdb-half">
           <input class="jdb-input jdb-border" type="text" placeholder="Nom" required="" name="name" spellcheck="false"/>
         </div>
@@ -37,8 +36,8 @@ image: /assets/images/carte-belgique.png
       <div class="jdb-margin-bottom">
         <input class="jdb-input jdb-border" type="text" placeholder="Sujet" required="" name="subject" spellcheck="false">
       </div>
-      <textarea class="jdb-input jdb-border" placeholder="Votre message" rows="4" required="" name="Message"></textarea>
-      <button class="jdb-button jdb-theme jdb-hover-green jdb-right jdb-section jdb-hover-shadow" type="submit" aria-label="Envoyer">
+      <textarea class="jdb-input jdb-border" placeholder="Votre message" rows="4" required="" name="message"></textarea>
+      <button class="jdb-button jdb-theme jdb-hover-green jdb-right jdb-section jdb-hover-shadow" type="submit">
         Envoyer<span class="jdb-hide-small"> le message</span>
         <i class="fa fa-send" aria-hidden="true"></i>
       </button>
