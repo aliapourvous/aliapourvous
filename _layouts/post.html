@@ -32,14 +32,12 @@ layout: default
       <div class="jdb-section" id="tags">
         <span>{% if page.tags.size >= 1 %}Tags{% else %}Tag{% endif %} : </span>
         {% for tag in page.tags %}
-          <a class="jdb-decoration-0" href="/{{ site.tag_page_dir }}/{{ tag }}/">
-            <code class="jdb-tag jdb-light-gray"><nobr>{{ tag }}</nobr></code>&nbsp;
-          </a>
+          <a class="jdb-tag jdb-decoration-0 jdb-text-gray jdb-light-gray" href="/{{ site.tag_page_dir }}/{{ tag }}/"> {{ tag }}</span>&nbsp;</a>
         {% endfor %}
       </div>
       <hr/>
     {% endif %}
-    <div class="share-container jdb-row">
+    <div class="share-container jdb-section jdb-row">
       <h4>Partager cet article sur :</h4>
       <div class="jdb-third jdb-padding jdb-hover-light-gray">
         <a class="share__link" href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{site.baseurl}}{{ page.url }}" onclick="window.open(this.href, '{{ page.title }}', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">
