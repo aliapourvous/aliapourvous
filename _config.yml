@@ -46,7 +46,7 @@ netlifycms: true
 analytics:
   google:
     tracking_id: UA-159004386-1
-    site_verification:
+    site_verification: "-EhcyrCYQdyvQByapcPz5-8yOB9MWvODyxVAHmIjVGs"
 
 # Build settings
 include             : [".htaccess"]
