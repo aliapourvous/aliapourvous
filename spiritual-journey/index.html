@@ -85,7 +85,8 @@ thumbnail: /assets/images/condenser-microphone.jpg
 
         $.each(item.embedURLs, function (i, url) {
           $item += "<div class='jdb-half'>" +
-            "<iframe src='" + url + "' height='102px' width='400px' frameborder='0' scrolling='no'></iframe>" +
+            (item.author ? ("<div class='jdb-text-gray jdb-margin-bottom'>by " + item.author + "</div>") : "") +
+            "<iframe loading='lazy' src='" + url + "' height='102px' width='400px' frameborder='0' scrolling='no'></iframe>" +
           "</div>";
         });
 
