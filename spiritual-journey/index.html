@@ -83,10 +83,10 @@ thumbnail: /assets/images/condenser-microphone.jpg
           "<h3>" + item.published_date + "</h3>" +
           "<div class='jdb-row-padding podcasts-container'>";
 
-        $.each(item.embedURLs, function (i, url) {
+        $.each(item.embed, function (i, embedItem) {
           $item += "<div class='jdb-half'>" +
-            (item.author ? ("<div class='jdb-text-gray jdb-margin-bottom'>by " + item.author + "</div>") : "") +
-            "<iframe loading='lazy' src='" + url + "' height='102px' width='400px' frameborder='0' scrolling='no'></iframe>" +
+            (embedItem.author ? ("<div class='jdb-text-gray jdb-margin-bottom'>by " + embedItem.author + "</div>") : "") +
+            "<iframe loading='lazy' src='" + embedItem.url + "' height='102px' width='400px' frameborder='0' scrolling='no'></iframe>" +
           "</div>";
         });
 
