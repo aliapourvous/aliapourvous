@@ -10,7 +10,7 @@
               </div>
             {% endif %}
             {% assign no_thumbnail = false %}
-            <figure class="absolute-bg" style="background-image:url({% if post.image %}{% if post.image contains '://' %}{{ post.image }}{% else %}{{ post.image | absolute_url }}{% endif %}{% elsif post.thumbnail %}{{ post.thumbnail  }}{% else %}{{ '/assets/images/no-image.png' | prepend: site.baseurl }}{% assign no_thumbnail = true %}{% endif %});{% if no_thumbnail %}background-size:contain!important;background-color:var(--theme-color);{% endif %}"></figure>
+            <figure class="absolute-bg" style="background-image:url({% if post.image %}{% if post.image contains '://' %}{{ post.image }}{% else %}{{ post.image | absolute_url }}{% endif %}{% elsif post.thumbnail %}{{ post.thumbnail  }}{% else %}'/assets/images/no-image.png'{% assign no_thumbnail = true %}{% endif %});{% if no_thumbnail %}background-size:contain!important;background-color:var(--theme-color);{% endif %}"></figure>
           </div>
 
           <div class="jdb-posts__header jdb-container jdb-white">
