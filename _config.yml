@@ -1,7 +1,6 @@
 # Where things are
 source              : .
 destination         : ./_site
-# collections_dir     : .
 # authors_dir         : _authors
 # plugins_dir         : _plugins
 layouts_dir         : _layouts
@@ -20,6 +19,16 @@ author:
   name: Alia Elesse
   email: welcome@aliapourvous.com
 
+developer:
+  name: José dBruxelles
+  first_name: José
+  last_name: Ngoyi
+  job_title: Web Developer
+  url: https://jose.bruxelles.dev
+  avatar: https://jose.bruxelles.dev/me.png
+  twitter: jdbruxelles
+  github: jdbruxelles
+
 # Site/SEO settings
 disqus_id        : aliapourvous
 mailchimp_list   : false # MailChimp list URL
@@ -30,6 +39,7 @@ default_img      : /assets/images/me-161-20140401.jpg
 github:
   repository_url: https://github.com/aliapourvous/aliapourvous
   zip_url: https://github.com/aliapourvous/aliapourvous/archive/master.zip
+
 social:
   # github    : https://github.com/aliapourvous
   instagram : https://instagram.com/aliaelesse
@@ -66,6 +76,7 @@ plugins:
   # - jekyll-seo-tag
 
 # sass:
+#   sass_dir: _assets/scss
 #   style: compact # possible values: nested expanded compact compressed
 #   deploy_style: compressed # for build
 #   compile_in_place: true
@@ -87,16 +98,6 @@ compress_html:
   comments  : all
   startings : [html, head, body]
 
-exclude:
-  - node_modules
-  - .DS_Store
-  - CNAME
-  - Gemfile
-  - Gemfile.lock
-  - gulpfile.js
-  - package.json
-  - README.md
-
 # Pagination
 paginate      : 6
 per_page      : 6
@@ -107,7 +108,9 @@ limit         : 6
 # sort_reverse: true
 
 # Collections
-# collections:
+collections:
+  podcasts:
+    output: false
   # work:
   #   output: true
   #   permalink: /:path/
@@ -127,12 +130,6 @@ defaults:
       comments: true
       # author: sal
       # avatar: /assets/images/avatar1.jpg
-  # all pages
-  - scope:
-      path: "_pages"
-    values:
-      layout: page
-      noindex: true
 
 # Tag page
 tag_page_layout : tag_page
