@@ -1,27 +1,22 @@
+---
+layout: compress
+---
+
 [
-  {
-    "published_date": "26 avril 2020",
-    "embed": [
-      {
-        "author": "Elfia Elesse",
-        "url": "https://anchor.fm/alia-elesse/embed/episodes/Au-del-de-moi-mme-ecnoao/a-a1u36qk"
-      }
-    ]
-  }, {
-    "published_date": "19 avril 2020",
-    "embed": [
-      {
-        "author": "",
-        "url": "https://anchor.fm/alia-elesse/embed/episodes/Dpendante-ecno14/a-a58kpi"
-      }
-    ]
-  }, {
-    "published_date": "12 avril 2020",
-    "embed": [
-      {
-        "author": "",
-        "url": "https://anchor.fm/alia-elesse/embed/episodes/Fils-de-Dieu--Fils-de-lHomme-ecispc/a-a58kpi"
-      }
-    ]
-  }
+  {% assign sortedPodcasts = site.podcasts | sort: "published_date" | reverse %}
+  {%- for item in sortedPodcasts %}
+    {
+      "isPublished": "{{ item.published }}",
+      "published_date": "{{ item.published_date }}",
+      "embed": [
+        {%- for podcast in item.podcasts_list %}
+          {
+            "author": "{{ podcast.podcast_author }}",
+            "title": "{{ podcast.podcast_title }}",
+            "url": "{{ podcast.spotify_link }}"
+          }{% if forloop.last == false %},{% endif %}
+        {%- endfor %}
+      ]
+    }{% if forloop.last == false %},{% endif %}
+  {%- endfor %}
 ]

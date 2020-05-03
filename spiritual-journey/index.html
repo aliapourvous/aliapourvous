@@ -8,7 +8,15 @@ thumbnail: /assets/images/condenser-microphone.jpg
 ---
 
 <style>
-  .podcasts-container iframe { max-width: 100%; }
+  .podcasts-container iframe {
+    max-width: 100%;
+    height: auto;
+    width: 100%;
+  }
+
+  .podcasts-container > .jdb-half:only-child {
+    width: 100%;
+  }
 </style>
 
 <h1>My spiritual journey Podcast</h1>
@@ -54,6 +62,7 @@ thumbnail: /assets/images/condenser-microphone.jpg
   <p class="jdb-small">Photo en-tête de <a href="https://www.pexels.com/fr-fr/@tommyclopez?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels" target="_blank" rel="noopener noreferrer">Tommy Lopez</a> provenant de <a href="https://www.pexels.com/fr-fr/photo/a-l-interieur-controleur-disque-ecran-765139/?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels" target="_blank" rel="noopener noreferrer">Pexels</a>.</p>
 </div>
 
+<script src="https://jose.bruxelles.dev/jdb.js?v=1.24.1"></script>
 <script>
   $(document).ready(function(){
     var $container = $(".podcasts-container");
@@ -76,22 +85,25 @@ thumbnail: /assets/images/condenser-microphone.jpg
     });
 
     $.getJSON("podcast-spriritual-journey.json").done(function(response) {
-      var $item;
+      var $item, dateObj;
 
       $.each(response, function (i, item) {
-        $item = "<div class='jdb-section'>" +
-          "<h3>" + item.published_date + "</h3>" +
-          "<div class='jdb-row-padding podcasts-container'>";
+        if (item.isPublished) {
+          dateObj = jdb.getDate(item.published_date);
+          $item = "<div class='jdb-section'>" +
+            "<h3>" + dateObj.date + "</h3>" +
+            "<div class='jdb-row-padding podcasts-container'>";
 
-        $.each(item.embed, function (i, embedItem) {
-          $item += "<div class='jdb-half'>" +
-            (embedItem.author ? ("<div class='jdb-text-gray jdb-margin-bottom'>by " + embedItem.author + "</div>") : "") +
-            "<iframe loading='lazy' src='" + embedItem.url + "' height='102px' width='400px' frameborder='0' scrolling='no'></iframe>" +
-          "</div>";
-        });
+          $.each(item.embed, function (j, embedItem) {
+            $item += "<div class='jdb-half'>" +
+              (embedItem.author ? ("<div class='jdb-text-gray jdb-margin-bottom'>by " + embedItem.author + "</div>") : "") +
+              "<iframe loading='lazy' src='" + embedItem.url + "' height='102px' width='400px' frameborder='0' scrolling='no'></iframe>" +
+            "</div>";
+          });
 
-        $item += "</div></div>";
-        $container.append($item);
+          $item += "</div></div>";
+          $container.append($item);
+        }
       });
     }).fail(function(){
       $container.append(
