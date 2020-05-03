@@ -164,13 +164,13 @@ collections:
           #   searchFields: ["name.first", "name.last"]
           #   valueField: "name.first name.first"
 
-          - name: "podcast_link"
+          - name: "spotify_link"
             label: "URL du podcast sur Spotify"
             hint: "Ex.: https://open.spotify.com/embed-podcast/episode/21AGLvTTEM9U1YZoIMsrgc"
             widget: "string"
             required: true
 
-          - name: "podcast_link_id"
+          - name: "spotify_link_id"
             label: "ID de l'URL"
             hint: "Ex.: 21AGLvTTEM9U1YZoIMsrgc"
             widget: "string"
