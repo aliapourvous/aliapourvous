@@ -133,9 +133,8 @@ collections:
 
       - name: "published_date"
         label: "Date de publication du podcast"
-        widget: "datetime"
-        timeFormat: "HH:mm:ss"
-        dateFormat: "YYYY-MM-DD"
+        widget: "date"
+        format: "YYYY-MM-DD"
         required: true
 
       - name: "title"

@@ -1,6 +1,6 @@
 ---
 published: true
-published_date: 2020-04-19T16:00:00.000Z
+published_date: 2020-04-19
 title: Dépendante
 podcasts_list:
   - podcast_title: Dépendante

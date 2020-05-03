@@ -1,6 +1,6 @@
 ---
 published: true
-published_date: 2020-04-26T16:00:00.000Z
+published_date: 2020-04-26
 title: Au delà de moi-même
 podcasts_list:
   - podcast_title: Au delà de moi-même

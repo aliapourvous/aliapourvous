@@ -1,6 +1,6 @@
 ---
 published: true
-published_date: 2020-04-12T16:00:00.000Z
+published_date: 2020-04-12
 title: Fils de Dieu, Fils de l'Homme
 podcasts_list:
   - podcast_title: Fils de Dieu, Fils de l'Homme
