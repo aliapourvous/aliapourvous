@@ -143,16 +143,17 @@ collections:
         collapsed: false
         widget: "list"
         fields:
-          - label: "Titre du podcast"
+          - name: "Title"
+            label: "Titre du podcast"
             widget: "string"
             required: true
 
-          - label: "Auteur.e"
-            name: "author"
+          - name: "author"
+            label: "Auteur.e"
             widget: "string"
             required: false
-          # - label: "Auteur.e"
-          #   name: "author"
+          # - name: "author"
+          #   label: "Auteur.e"
           #   widget: "relation"
           #   collection: "podcast_authors"
           #   searchFields: ["name.first", "name.last"]
