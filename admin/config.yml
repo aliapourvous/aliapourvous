@@ -170,12 +170,6 @@ collections:
             widget: "string"
             required: true
 
-          - name: "spotify_link_id"
-            label: "ID de l'URL"
-            hint: "Ex.: 21AGLvTTEM9U1YZoIMsrgc"
-            widget: "string"
-            required: true 
-
       - name: "description"
         label: "Description de la page"
         hint: "Une brève description de la page."
