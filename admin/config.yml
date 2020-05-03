@@ -131,6 +131,11 @@ collections:
         widget: "boolean"
         default: false
 
+      - name: "title"
+        label: "Titre du fichier"
+        widget: "string"
+        required: true
+
       - name: "date"
         label: "Date de publication du podcasts"
         hint: "Format : JJ/MM/AAAA"
@@ -143,7 +148,7 @@ collections:
         collapsed: false
         widget: "list"
         fields:
-          - name: "Title"
+          - name: "title"
             label: "Titre du podcast"
             widget: "string"
             required: true
