@@ -131,16 +131,16 @@ collections:
         widget: "boolean"
         default: false
 
+      - name: "published_date"
+        label: "Date de publication du podcast"
+        widget: "datetime"
+        timeFormat: "HH:mm:ss"
+        dateFormat: "YYYY-MM-DD"
+        required: true
+
       - name: "title"
         label: "Titre de la page"
         widget: "string"
-        required: true
-
-      - name: "date"
-        label: "Date de publication du podcasts"
-        hint: "Format : MM/JJ/AAAA"
-        widget: "date"
-        format: "MM-DD-YYYY"
         required: true
 
       - name: "podcasts_list"
