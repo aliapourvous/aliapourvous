@@ -19,7 +19,7 @@ logo_url: "/favicon.ico"
 
 slug:
   clean_accents: true
-  sanitize_replacement: "_"
+  sanitize_replacement: "-"
 
 collections:
   - name: "blog"  # Used in routes, e.g., /admin/collections/blog
@@ -31,7 +31,7 @@ collections:
     editor:
       preview: true
     publish_mode: editorial_workflow
-    preview_path: /blog/preview/{{slug}}_draft # Configuring preview paths
+    preview_path: /blog/{{year}}/{{month}}/{{day}}/{{slug}} # Configuring preview paths
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
       - {
@@ -125,34 +125,60 @@ collections:
     # publish_mode: editorial_workflow
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
-      - {
-          name: "published",
-          label: "Publier",
-          hint: "Si cette case est coché, le podcast apparaîtra sur le site web. Vous pouvez toujours décocher la case pour masquer le podcast du site.",
-          widget: "boolean",
-          default: false }
-      - {
-          name: "date",
-          label: "Date de publication du podcasts",
-          hint: "Format : JJ/MM/AAAA",
-          widget: "date",
-          format: "DD/MM/YYYY",
-          required: true }
-      - {
-          name: "title",
-          label: "Titre du podcast",
-          widget: "string",
-          required: true }
-      - {
-          name: "description",
-          label: "Description du podcast",
-          hint: "Une breve description du podcast.", 
-          widget: "string",
-          required: false }
-      # - {
-      #     name: "body",
-      #     label: "Contenu du podcast",
-      #     widget: "markdown" }
+      - name: "published"
+        label: "Publier"
+        hint: "Si cette case est coché, le podcast apparaîtra sur le site web. Vous pouvez toujours décocher la case pour masquer le podcast du site."
+        widget: "boolean"
+        default: false
+
+      - name: "date"
+        label: "Date de publication du podcasts"
+        hint: "Format : JJ/MM/AAAA"
+        widget: "date"
+        format: "DD/MM/YYYY"
+        required: true
+
+      - name: "podcasts_list"
+        label: "Liste de podcasts du jour"
+        collapsed: false
+        widget: "list"
+        fields:
+          - label: "Titre du podcast"
+            widget: "string"
+            required: true
+
+          - label: "Auteur.e"
+            name: "author"
+            widget: "string"
+            required: false
+          # - label: "Auteur.e"
+          #   name: "author"
+          #   widget: "relation"
+          #   collection: "podcast_authors"
+          #   searchFields: ["name.first", "name.last"]
+          #   valueField: "name.first name.first"
+
+          - name: "link"
+            label: "URL du podcast sur Spotify"
+            hint: "Ex.: https://open.spotify.com/embed-podcast/episode/21AGLvTTEM9U1YZoIMsrgc"
+            widget: "string"
+            required: true
+
+          - name: "link_id"
+            label: "ID de l'URL"
+            hint: "Ex.: 21AGLvTTEM9U1YZoIMsrgc"
+            widget: "string"
+            required: true 
+
+      - name: "description"
+        label: "Description de la page"
+        hint: "Une brève description de la page."
+        widget: "string"
+        required: false
+
+      # - name: "body"
+      #   label: "Contenu de la page"
+      #   widget: "markdown"
   # - name: "page" # Used in routes, ie.: /admin/collections/:slug/page
   #   label: "Pages (BETA)" # Used in the UI, ie
   #   label_singular: "Page" # Used in the UI, ie.: "New Post"
