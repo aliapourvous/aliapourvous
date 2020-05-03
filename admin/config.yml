@@ -132,13 +132,13 @@ collections:
         default: false
 
       - name: "title"
-        label: "Titre du fichier"
+        label: "Titre de la page"
         widget: "string"
         required: true
 
       - name: "date"
         label: "Date de publication du podcasts"
-        hint: "Format : JJ/MM/AAAA"
+        hint: "Format : MM/JJ/AAAA"
         widget: "date"
         format: "DD/MM/YYYY"
         required: true
@@ -148,29 +148,29 @@ collections:
         collapsed: false
         widget: "list"
         fields:
-          - name: "title"
+          - name: "podcast_title"
             label: "Titre du podcast"
             widget: "string"
             required: true
 
-          - name: "author"
+          - name: "podcast_author"
             label: "Auteur.e"
             widget: "string"
             required: false
-          # - name: "author"
+          # - name: "podcast_author"
           #   label: "Auteur.e"
           #   widget: "relation"
           #   collection: "podcast_authors"
           #   searchFields: ["name.first", "name.last"]
           #   valueField: "name.first name.first"
 
-          - name: "link"
+          - name: "podcast_link"
             label: "URL du podcast sur Spotify"
             hint: "Ex.: https://open.spotify.com/embed-podcast/episode/21AGLvTTEM9U1YZoIMsrgc"
             widget: "string"
             required: true
 
-          - name: "link_id"
+          - name: "podcast_link_id"
             label: "ID de l'URL"
             hint: "Ex.: 21AGLvTTEM9U1YZoIMsrgc"
             widget: "string"
