@@ -24,7 +24,7 @@ image: /assets/images/carte-belgique.png
         <a href="mailto:{{ site.social.email }}">{{ site.social.email }}</a><br/>
       {% endif %}
     </div>
-    <form class="rounded jdb-focusable-inputs" action="/contact" name="contact" netlify>
+    <form class="rounded jdb-focusable-inputs" action="/contact" name="contact" method="POST" data-netlify="true" data-netlify-recaptcha="true">
       <div class="jdb-row-padding" style="margin:0 -8px 8px -8px">
         <div class="jdb-half">
           <input class="jdb-input jdb-border" type="text" placeholder="Nom" required="" name="name" spellcheck="false"/>
