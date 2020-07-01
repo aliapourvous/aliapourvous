@@ -33,13 +33,14 @@ Bénir mon pays ! Oui, c’est ce que je suis appelée à faire. Même si je ne 
 C’est la moindre de choses que je peux faire. Croire que le meilleur est à venir, croire quand dans des situations chaotiques, il y a de l’espérance. Cette espérance se manifeste de plusieurs manières, par le sourire de mes proches congolais, belges… Mon héritage en tant que belgo-congolaise est mon histoire tel qu’elle est réellement. Un passé non revisité, des accords de coopération bilatérale non changés depuis des années avec comme argument le système corrompu. Une question posée dans le chat du séminaire qui avait lieu dans le museum talk du musée de Tervuren en Belgique face à un des internautes qui donnait tort encore aux congolais et à sa mentalité de corrompu. La question était simple : si nous méprisons une nation et sa gouvernance, pourquoi continuer à coopérer pour en tirer profit ?
 
 C’est la moindre de choses que je peux faire. Croire que le meilleur est à venir, croire quand dans des situations chaotiques, il y a de l’espérance.
-Cette espérance se manifeste de plusieurs manières, par le sourire de mes proches congolais, Belges…
+Cette espérance se manifeste de plusieurs manières, par le sourire de mes proches congolais, belges…
 
 Mon héritage en tant que Belgo Congolaise est mon histoire telle qu'elle est réellement.
 Un passé non revisité, des accords de coopération bilatérale non changés depuis des années avec comme argument le système corrompu. Une question posée dans le chat du séminaire qui avait lieu dans le museum talk du musée de Tervuren en Belgique face à un des internautes qui donnaient tort encore aux Congolais et à sa mentalité de corrompu.
 La question était simple : si nous méprisons une nation et sa gouvernance, pourquoi continuer à coopérer pour en tirer profit ?
 
-Posons-nous les bonnes questions... Est-ce que la Belgique a fait et la RDC ont fait la paix avec ce passé colonial ? Les deux nations ont-elles pris le temps de transformer le narratif au sein de ses populations par la réforme de l'éducation et revisiter les schémas de pensées d'un passé trop présent dans nos actualités et dans nos discours ? Une jeunesse qui finalement se laisse éduquer par les activistes dont le discours acerbe est difficile à maîtriser.
+Posons-nous les bonnes questions... Est-ce que la Belgique a fait et la RDC ont fait la paix avec ce passé colonial ? Les deux nations ont-elles pris le temps de transformer le narratif au sein de ses populations par la réforme de l'éducation et revisiter les schémas de pensées d'un passé trop présent dans nos actualités et dans nos discours ? 
+Une jeunesse qui finalement se laisse éduquer par les activistes dont le discours acerbe est difficile à maîtriser.
 
 Devons-nous renier ces mouvements, ces plaidoyers qui manifestent une insatisfaction profonde face à une Belgique remplie de cette jeunesse hybride de plusieurs nations avec qui la Belgique a eu à collaborer ou exploiter pour le développement de ses infrastructures ?
 Le monde change et il est temps de retirer les oeillères avant que cela n'éclate et que la crise économique, sociale et tant d'autres crises impactent nos nations respectives.
