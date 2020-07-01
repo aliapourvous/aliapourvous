@@ -68,12 +68,6 @@ collections:
         hint: "L'image affichée dans le fil du blog.",
         widget: "image",
         required: false }
-      - {
-        name: "thumbnail",
-        label: "Image en vedette (URL)",
-        hint: "L'image affichée dans le fil du blog. S'il s'agit d'un fichier externe.",
-        widget: "string",
-        required: false }
       # - {
       #   name: "feature_text",
       #   label: "Texte en vedette (Description)",
