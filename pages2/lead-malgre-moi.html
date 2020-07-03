@@ -80,7 +80,7 @@ image: /assets/images/alac-1.jpg
     </span>
   </legend>
   <p>Inscrivez-vous pour recevoir mes courriels concernant le leadership responsable.</p>
-  <form class="rounded jdb-focusable-inputs" name="alac-subscription" action="#" method="POST" data-netlify="true">
+  <form class="rounded jdb-focusable-inputs" name="alac-subscription" action="/lead-malgre-moi" method="POST" data-netlify="true">
     <div class="jdb-row-padding" style="margin:0 -16px 8px -16px">
       <div class="jdb-col jdb-half">
         <label class="jdb-show-block jdb-margin-4" for="alac-name">
@@ -149,7 +149,7 @@ image: /assets/images/alac-1.jpg
       $submitButton.find(".fa").removeClass("fa-user-plus").addClass("fa-spinner fa-spin");
       $submitButton.find("span.fs-label").text("Inscription en cours");
 
-      $.post("/contact", $form.serialize()).done(function(){
+      $.post("/lead-malgre-moi", $form.serialize()).done(function(){
         $form.empty().addClass(["jdb-panel", "jdb-pale-green"]).append(
           $("<h3>").addClass("h3").text("Vous êtes inscrit.e dans la liste leadership responsable !")
         ).append(
