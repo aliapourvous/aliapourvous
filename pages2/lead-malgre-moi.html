@@ -6,7 +6,6 @@ thumbnail: /assets/images/alac-1.jpg
 image: /assets/images/alac-1.jpg
 ---
 
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script src="https://s3.amazonaws.com/cdn.io/datas/lib/jdb/1.21.0/jdb.min.js"></script>
 
 <style type="text/css">
@@ -80,7 +79,7 @@ image: /assets/images/alac-1.jpg
     </span>
   </legend>
   <p>Inscrivez-vous pour recevoir mes courriels concernant le leadership responsable.</p>
-  <form class="rounded jdb-focusable-inputs" name="alac-subscription" action="/lead-malgre-moi" method="POST" data-netlify="true">
+  <form class="rounded jdb-focusable-inputs" name="alac-subscription" method="POST" data-netlify="true" data-netlify-recaptcha="true">
     <div class="jdb-row-padding" style="margin:0 -16px 8px -16px">
       <div class="jdb-col jdb-half">
         <label class="jdb-show-block jdb-margin-4" for="alac-name">
@@ -161,7 +160,7 @@ image: /assets/images/alac-1.jpg
           $("<p>").html("Oups ! Une erreur est survenue lors de la tentative d'envoi de votre message. Veuillez vérifier votre connexion internet, actualiser la page et réessayer. Si le problème persiste, merci de revenir plutard.")
         ).addClass(["jdb-text-red", "jdb-border", "jdb-border-red"]).show().append(
           $("<a>", {
-            text: " Actualiser",
+            text: " Actualiser la page",
             onclick: function() {
               window.location.reload(true);
             }

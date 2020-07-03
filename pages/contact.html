@@ -6,8 +6,6 @@ thumbnail: /assets/images/carte-belgique.png
 image: /assets/images/carte-belgique.png
 ---
 
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
 <div class="jdb-section" id="contact">
   <h3 class="jdb-center jdb-bold jdb-theme jdb-round-lg jdb-padding">
     Comment me contacter ?
@@ -27,7 +25,7 @@ image: /assets/images/carte-belgique.png
       {% endif %}
     </div>
     <hr class="jdb-hr"/>
-    <form class="rounded jdb-focusable-inputs" action="/contact" name="contact" method="POST" data-netlify="true">
+    <form class="rounded jdb-focusable-inputs" name="contact" method="POST" data-netlify="true" data-netlify-recaptcha="true">
       <div class="jdb-row-padding" style="margin:0 -16px 8px -16px">
         <div class="jdb-half">
           <label class="jdb-show-block jdb-margin-4" for="name">
@@ -91,7 +89,7 @@ image: /assets/images/carte-belgique.png
               $("<p>").html("Oups ! Une erreur est survenue lors de la tentative d'envoi de votre message. Veuillez vérifier votre connexion internet, actualiser la page et réessayer. Si le problème persiste, merci de revenir plutard.")
             ).addClass(["jdb-text-red", "jdb-border", "jdb-border-red"]).show().append(
               $("<a>", {
-                text: " Actualiser",
+                text: " Actualiser la page.",
                 onclick: function() {
                   window.location.reload(true);
                 }
