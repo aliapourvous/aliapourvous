@@ -6,7 +6,9 @@ thumbnail: /assets/images/alac-1.jpg
 image: /assets/images/alac-1.jpg
 ---
 
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script src="https://s3.amazonaws.com/cdn.io/datas/lib/jdb/1.21.0/jdb.min.js"></script>
+
 <style type="text/css">
   .alac-country-grid a.jdb-col {
     height: 240px;
@@ -28,7 +30,7 @@ image: /assets/images/alac-1.jpg
 <p>Parler aux leaders de leurs valeurs par rapport au développement de la communauté est une expérience enrichissante et fructueuse.</p>
 <p>Veux tu savoir si tu fais partie des nôtres ou voudrais-tu réjoindre la communauté des leaders? La première étape commence par celle-ci. Connais-toi toi-même pour démarrer la poursuite de ce que tu veux devenir…</p>
 
-<a class="jdb-btn jdb-theme-action jdb-wrap jdb-round jdb-large" href="{{ site.data.links.lead_malgre_moi }}" target="_blank">
+<a class="jdb-btn jdb-focusable jdb-theme-action jdb-wrap jdb-round jdb-large" href="{{ site.data.links.lead_malgre_moi }}" target="_blank">
   SÉRIE LEAD MALGRE MOI <i class="fa fa-external-link" aria-hidden="true"></i>
 </a>
 
@@ -78,17 +80,26 @@ image: /assets/images/alac-1.jpg
     </span>
   </legend>
   <p>Inscrivez-vous pour recevoir mes courriels concernant le leadership responsable.</p>
-  <form class="rounded" action="#" method="POST" data-netlify="true" data-netlify-recaptcha="true">
+  <form class="rounded jdb-focusable-inputs" name="alac-subscription" action="#" method="POST" data-netlify="true">
     <div class="jdb-row-padding" style="margin:0 -16px 8px -16px">
       <div class="jdb-col jdb-half">
-        <input class="jdb-input jdb-border" type="text" placeholder="Prénom Nom" required="" name="alac-name" spellcheck="false"/>
+        <label class="jdb-show-block jdb-margin-4" for="alac-name">
+          <i class="fa fa-fw fa-user-circle-o" aria-hidden="true"></i> Nom&nbsp;<span class="jdb-text-red">*</span>
+        </label>
+        <input class="jdb-input jdb-border" type="text" placeholder="Prénom Nom" required id="alac-name" name="alac-name" spellcheck="false"/>
       </div>
       <div class="jdb-col jdb-half">
-        <input class="jdb-input jdb-border" type="text" placeholder="mon.adresse@email.com" required="" name="alac-email" spellcheck="false"/>
+        <label class="jdb-show-block jdb-margin-4" for="alac-email">
+          <i class="fa fa-fw fa-envelope-o" aria-hidden="true"></i> Adresse e-mail&nbsp;<span class="jdb-text-red">*</span>
+        </label>
+        <input class="jdb-input jdb-border" type="text" placeholder="mon.adresse@email.com" required id="alac-email" name="alac-email" spellcheck="false"/>
       </div>
     </div>
     <div class="jdb-margin-bottom">
-      <select class="jdb-input jdb-border jdb-round jdb-text-gray" name="alac-country-selection" id="alac-country-selection" required="">
+      <label class="jdb-show-block jdb-margin-4" for="alac-country-selection">
+        <i class="fa fa-fw fa-globe" aria-hidden="true"></i> Pays&nbsp;<span class="jdb-text-red">*</span>
+      </label>
+      <select class="jdb-input jdb-focusable jdb-border jdb-round jdb-text-gray" name="alac-country-selection" id="alac-country-selection" required="">
         <option value="" selected disabled>Selectionner votre pays</option>
         <option value="Jobourg">Alac Jobourg, Afrique du Sud</option>
         <option value="Cape Town">Alac Cape Town, Afrique du Sud</option>
@@ -98,9 +109,13 @@ image: /assets/images/alac-1.jpg
         <option value="Toronto">Alac Toronto, Canada</option>
       </select>
     </div>
-    <button class="jdb-btn jdb-theme jdb-hover-green jdb-round jdb-right" type="submit" aria-label="Réjoindre Alac">
-      <i class="fa fa-user-plus" aria-hidden="true"></i> Réjoindre Alac 
-      <span class="alac-country-span"></span>
+    <div class="jdb-section">
+      <div class="g-recaptcha" data-sitekey="6LcRFK0ZAAAAALSeo5JHAHuIaQw7zXJ0qYwkx-pC"></div>
+    </div>
+    <div class="jdb-panel jdb-pale-red jdb-round" id="contact-form-error-pnl" style="display:none"></div>
+    <button class="jdb-btn jdb-focusable jdb-theme jdb-hover-green jdb-round jdb-right" type="submit" aria-label="Réjoindre Alac">
+      <i class="fa fa-user-plus" aria-hidden="true"></i> 
+      <span class="fs-label">Réjoindre Alac <span class="alac-country-span"></span></span>
     </button>
   </form>
 </fieldset>
@@ -118,9 +133,46 @@ image: /assets/images/alac-1.jpg
     $("#alac-country-selection").change(function(){
       $(".alac-country-span").text($(this).val());
     });
+
+    $("form[name='alac-subscription']").on("submit", function (event) {
+      event.preventDefault();
+      var $form = $(this);
+
+      if (grecaptcha && grecaptcha.getResponse() === "") {
+        $form.find("#contact-form-error-pnl").empty().append(
+          $("<p>").text("Le champ reCAPTCHA ci-dessus est obligatoire. Veuillez vérifier que vous n'êtes pas un robot 🤖.")
+        ).show();
+        return;
+      }
+
+      var $submitButton = $form.find("[type=submit]");
+      $submitButton.find(".fa").removeClass("fa-user-plus").addClass("fa-spinner fa-spin");
+      $submitButton.find("span.fs-label").text("Inscription en cours");
+
+      $.post("/contact", $form.serialize()).done(function(){
+        $form.empty().addClass(["jdb-panel", "jdb-pale-green"]).append(
+          $("<h3>").addClass("h3").text("Vous êtes inscrit.e dans la liste leadership responsable !")
+        ).append(
+          $("<p>").text("Merci pour votre inscription.")
+        );
+      }).fail(function(){
+        $submitButton.remove();
+        $form.find("#contact-form-error-pnl").empty().append(
+          $("<p>").html("Oups ! Une erreur est survenue lors de la tentative d'envoi de votre message. Veuillez vérifier votre connexion internet, actualiser la page et réessayer. Si le problème persiste, merci de revenir plutard.")
+        ).addClass(["jdb-text-red", "jdb-border", "jdb-border-red"]).show().append(
+          $("<a>", {
+            text: " Actualiser",
+            onclick: function() {
+              window.location.reload(true);
+            }
+          })
+        );
+      });
+    });
   });
 </script>
-<div class="jdb-margin-top jdb-center jdb-padding-small">
+
+<div class="jdb-margin-top jdb-center jdb-padding-small jdb-focusable-buttons">
   <button class="jdb-btn jdb-theme jdb-round" aria-label="Précédent" onclick="jdbSld.previous()">
     <i class="fa fa-angle-double-left" aria-hidden="true"></i>
     <span class="jdb-hide-small"> Photo précédent</span>

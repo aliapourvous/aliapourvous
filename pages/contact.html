@@ -6,6 +6,8 @@ thumbnail: /assets/images/carte-belgique.png
 image: /assets/images/carte-belgique.png
 ---
 
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 <div class="jdb-section" id="contact">
   <h3 class="jdb-center jdb-bold jdb-theme jdb-round-lg jdb-padding">
     Comment me contacter ?
@@ -24,23 +26,80 @@ image: /assets/images/carte-belgique.png
         <a href="mailto:{{ site.social.email }}">{{ site.social.email }}</a><br/>
       {% endif %}
     </div>
-    <form class="rounded jdb-focusable-inputs" action="/contact" name="contact" method="POST" data-netlify="true" data-netlify-recaptcha="true">
+    <hr class="jdb-hr"/>
+    <form class="rounded jdb-focusable-inputs" action="/contact" name="contact" method="POST" data-netlify="true">
       <div class="jdb-row-padding" style="margin:0 -8px 8px -8px">
         <div class="jdb-half">
-          <input class="jdb-input jdb-border" type="text" placeholder="Nom" required="" name="name" spellcheck="false"/>
+          <label class="jdb-show-block jdb-margin-4" for="name">
+            <i class="fa fa-fw fa-user-circle-o" aria-hidden="true"></i> Nom&nbsp;<span class="jdb-text-red">*</span>
+          </label>
+          <input class="jdb-input jdb-border" type="text" placeholder="John Doe" required id="name" name="name" spellcheck="false"/>
         </div>
         <div class="jdb-half">
-          <input class="jdb-input jdb-border" type="text" placeholder="Adresse email" required="" name="email" spellcheck="false"/>
+          <label class="jdb-show-block jdb-margin-4" for="email">
+            <i class="fa fa-fw fa-envelope-o" aria-hidden="true"></i> Adresse e-mail&nbsp;<span class="jdb-text-red">*</span>
+          </label>
+          <input class="jdb-input jdb-border" type="text" placeholder="mon.adresse@email.com" required id="email" name="email" spellcheck="false"/>
         </div>
       </div>
       <div class="jdb-margin-bottom">
-        <input class="jdb-input jdb-border" type="text" placeholder="Sujet" required="" name="subject" spellcheck="false">
+        <label class="jdb-show-block jdb-margin-4" for="subject">
+          <i class="fa fa-fw fa-dot-circle-o" aria-hidden="true"></i> Sujet&nbsp;<span class="jdb-text-red">*</span>
+        </label>
+        <input class="jdb-input jdb-border" type="text" required id="subject" name="subject" spellcheck="false">
       </div>
-      <textarea class="jdb-input jdb-border" placeholder="Votre message" rows="4" required="" name="message"></textarea>
-      <button class="jdb-button jdb-theme jdb-hover-green jdb-right jdb-section jdb-hover-shadow" type="submit">
-        Envoyer<span class="jdb-hide-small"> le message</span>
+      <label for="message" class="jdb-show-block jdb-margin-4">
+        <i class="fa fa-fw fa-comment-o" aria-hidden="true"></i> Votre message&nbsp;<span class="jdb-text-red">*</span>
+      </label>
+      <textarea class="jdb-input jdb-border" rows="4" required id="message" name="message"></textarea>
+      <div class="jdb-section">
+        <div class="g-recaptcha" data-sitekey="6LcRFK0ZAAAAALSeo5JHAHuIaQw7zXJ0qYwkx-pC"></div>
+      </div>
+      <div class="jdb-panel jdb-pale-red jdb-round" id="contact-form-error-pnl" style="display:none"></div>
+      <button class="jdb-button jdb-theme jdb-hover-green jdb-right jdb-section jdb-hover-shadow jdb-focusable" type="submit">
+        <span class="fs-label">Envoyer<span class="jdb-hide-small"> le message</span></span>
         <i class="fa fa-send" aria-hidden="true"></i>
       </button>
     </form>
+
+    <script>
+      $(document).ready(function(){
+        $("form[name='contact']").on("submit", function (event) {
+          event.preventDefault();
+          var $form = $(this);
+
+          if (grecaptcha && grecaptcha.getResponse() === "") {
+            $form.find("#contact-form-error-pnl").empty().append(
+              $("<p>").text("Le champ reCAPTCHA ci-dessus est obligatoire. Veuillez vérifier que vous n'êtes pas un robot 🤖.")
+            ).show();
+            return;
+          }
+
+          var $submitButton = $form.find("[type=submit]");
+          $submitButton.find(".fa").removeClass("fa-send").addClass("fa-spinner fa-spin");
+          $submitButton.find("span.fs-label").text("Envoi en cours");
+
+          $.post("/contact", $form.serialize()).done(function(){
+            $form.empty().addClass(["jdb-panel", "jdb-pale-green"]).append(
+              $("<h3>").addClass("h3").text("Envoyé !")
+            ).append(
+              $("<p>").text("Merci pour votre message.")
+            );
+          }).fail(function(){
+            $submitButton.remove();
+            $form.find("#contact-form-error-pnl").empty().append(
+              $("<p>").html("Oups ! Une erreur est survenue lors de la tentative d'envoi de votre message. Veuillez vérifier votre connexion internet, actualiser la page et réessayer. Si le problème persiste, merci de revenir plutard.")
+            ).addClass(["jdb-text-red", "jdb-border", "jdb-border-red"]).show().append(
+              $("<a>", {
+                text: " Actualiser",
+                onclick: function() {
+                  window.location.reload(true);
+                }
+              })
+            );
+          });
+        });
+      });
+    </script>
   </div>
 </div>
