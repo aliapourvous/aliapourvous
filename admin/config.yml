@@ -37,7 +37,7 @@ collections:
       preview: true
     preview_path: /blog/{{year}}/{{month}}/{{day}}/{{slug}} # Configuring preview paths
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
-    summary: '{{title}} -- {{year}}/{{month}}/{{day}}'
+    summary: "{{title}} -- {{year}}/{{month}}/{{day}}"
     view_filters:
       # For multiple author : use "Alia|Alice"
       - { label: "Les articles d'Alia", field: "author", pattern: "Alia" }
@@ -118,7 +118,7 @@ collections:
       - {
         name: "redirect_from",
         label: "Redirect from",
-        hint: "URL to redirect from. Ex.: /building-project. If you open this link, you'll be redirected  to the current post.",
+        hint: "URL de redirection. Ex .: /building-project. Si vous ouvrez ce lien, vous serez redirigé vers l'article actuel.",
         widget: "string",
         required: false }
 
