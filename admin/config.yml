@@ -194,7 +194,7 @@ collections:
     label_singular: "Livre" # Used in the UI, ie: "New Livre"
     description: "Base de données des livres lus par Alia Elesse."
     folder: "_books/" # The path to the folder where the documents are stored
-    media_folder: "assets/images/books" # Where media files will be stored in the repo
+    media_folder: "/assets/images/books" # Where media files will be stored in the repo
     create: true # Allow users to create new documents in this collection
     show_preview_links: false # Show Preview Links
     editor:
