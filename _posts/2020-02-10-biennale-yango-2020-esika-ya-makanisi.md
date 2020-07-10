@@ -3,7 +3,9 @@ layout: post
 noindex: true
 comments: true
 title: Biennale Yango 2020/Esika ya makanisi
-date: '2020-02-07 11:00:00'
+date: 2020-02-07 11:00:00
+author:
+  - Alia Elesse
 thumbnail: /assets/images/posts/84687527_2567038150241025_3541155399740686336_o.jpg
 tags:
   - Africa
