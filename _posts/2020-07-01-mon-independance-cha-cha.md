@@ -4,6 +4,8 @@ noindex: false
 comments: true
 title: Mon indépendance Cha-Cha
 date: 2020-06-30T12:45:00.000Z
+author:
+  - Alia Elesse
 thumbnail: /assets/images/posts/congo-independance-1.jpeg
 category: Africa
 tags:
