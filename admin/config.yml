@@ -130,11 +130,12 @@ collections:
     folder: "_authors/" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     show_preview_links: false # Show Preview Links
+    slug: "{{slug}}"
     editor:
       preview: false
     # slug: "{{slug}}"
     fields:
-      - { name: "full_name", label: "Nom complet", widget: "string", hint: "Prénom et nom" }
+      - { name: "name", label: "Nom complet", widget: "string", hint: "Prénom et nom" }
       - { name: "display_name", label: "Nom d'affichage", widget: "string" }
       - { name: "position", label: "Position (rôle)", widget: "string" }
       - { name: "url", label: "URL", widget: "string", required: false, hint: "Adresse du site web ou d'un réseau social" }
