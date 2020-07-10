@@ -109,7 +109,11 @@ limit         : 6
 
 # Collections
 collections:
+  authors:
+    output: false
   podcasts:
+    output: false
+  books:
     output: false
   # work:
   #   output: true

@@ -1,6 +1,7 @@
 backend:
   name: github
   repo: aliapourvous/aliapourvous
+  # open_authoring: true
   # Set to false to prevent transforming images in media gallery view
   use_large_media_transforms_in_media_library: true
   commit_messages:
@@ -10,7 +11,9 @@ backend:
     uploadMedia: Upload “{{path}}”
     deleteMedia: Delete “{{path}}”
 
-media_folder: "assets/images/posts"
+# publish_mode: editorial_workflow
+media_folder: "assets/images/posts" # Media files will be stored in the repo under static/images/uploads
+public_folder: "/assets/images/posts" # The src attribute for uploaded media will begin with /images/uploads
 locale: "fr"
 
 site_url: "/"
@@ -24,21 +27,23 @@ slug:
 collections:
   - name: "blog"  # Used in routes, e.g., /admin/collections/blog
     label: "Articles" # Used in the UI
+    label_singular: "Article" # Used in the UI, ie: "New Article"
+    description: "Tous les articles du blog Aliapourvous sont gérés à partir d'ici."
     folder: "_posts/" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     extension: md # File extension
     show_preview_links: true # Show Preview Links
     editor:
       preview: true
-    publish_mode: editorial_workflow
     preview_path: /blog/{{year}}/{{month}}/{{day}}/{{slug}} # Configuring preview paths
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    summary: '{{title}} -- {{year}}/{{month}}/{{day}}'
+    view_filters:
+      # For multiple author : use "Alia|Alice"
+      - { label: "Les articles d'Alia", field: "author", pattern: "Alia" }
+      - { label: "Brouillons", field: "draft", pattern: true }
     fields: # The fields for each document, usually in front matter
-      - {
-        name: "layout",
-        label: "Layout",
-        widget: "hidden",
-        default: "post" }
+      - { name: "layout", label: "Layout", widget: "hidden", default: "post" }
       - {
         name: "noindex",
         label: "Ne pas indexer",
@@ -61,7 +66,19 @@ collections:
         name: "date",
         label: "Date de publication",
         widget: "datetime",
-        format: "YYYY-MM-DD hh:mm:ss" }
+        dateFormat: "YYYY-MM-DD",
+        timeFormat: "hh:mm",
+        format: "YYYY-MM-DD hh:mm" }
+      - {
+        name: "author",
+        label: "Auteur.e",
+        widget: "relation",
+        collection: "authors",
+        searchFields: ["full_name", "display_name"],
+        valueField: "display_name",
+        multiple: true,
+        optionsLength: 20,
+        default: "post" }
       - {
         name: "thumbnail",
         label: "Image en vedette (sélectionner ou importer)",
@@ -90,15 +107,8 @@ collections:
         hint: "Liste des mots séparés par une virgule.",
         widget: "list",
         required: false }
-      - {
-        name: "body",
-        label: "Corps de l'article",
-        widget: "markdown" }
-      - {
-        name: "image",
-        label: "Meta image",
-        widget: "image",
-        required: false }
+      - { name: "body", label: "Corps de l'article", widget: "markdown" }
+      - { name: "image", label: "Meta image", widget: "image", required: false }
       - {
         name: "theme_color",
         label: "Couleur de theme pour Chrome (#cdcdcd)",
@@ -111,69 +121,103 @@ collections:
         hint: "URL to redirect from. Ex.: /building-project. If you open this link, you'll be redirected  to the current post.",
         widget: "string",
         required: false }
+
+  - name: "authors"
+    label: "Auteur.e.s"
+    label_singular: "Auteur.e"
+    description: "Auteur.e.s d'articles"
+    extension: md # File extension
+    folder: "_authors/" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    show_preview_links: false # Show Preview Links
+    editor:
+      preview: false
+    # slug: "{{slug}}"
+    fields:
+      - { name: "full_name", label: "Nom complet", widget: "string", hint: "Prénom et nom" }
+      - { name: "display_name", label: "Nom d'affichage", widget: "string" }
+      - { name: "position", label: "Position (rôle)", widget: "string" }
+      - { name: "url", label: "URL", widget: "string", required: false, hint: "Adresse du site web ou d'un réseau social" }
+
   - name: "podcasts" # Used in routes, e.g., /admin/collections/podcasts
     label: "Podcasts" # Used in the UI
+    label_singular: "Podcast" # Used in the UI, ie: "New Podcast"
+    description: "Index de podcasts 'My spiritual journey' stockés sur Spotify et Anchor."
     folder: "_podcasts/" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     show_preview_links: false # Show Preview Links
-    # publish_mode: editorial_workflow
+    editor:
+      preview: false
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
       - name: "published"
         label: "Publier"
-        hint: "Si cette case est coché, le podcast apparaîtra sur le site web. Vous pouvez toujours décocher la case pour masquer le podcast du site."
+        hint: >
+          "Si cette case est coché, le podcast apparaîtra sur le site web. 
+          Vous pouvez toujours décocher la case pour masquer le podcast du site."
         widget: "boolean"
         default: false
-
       - name: "published_date"
         label: "Date de publication du podcast"
         widget: "date"
         format: "YYYY-MM-DD"
         required: true
-
       - name: "title"
         label: "Titre de la page"
         widget: "string"
         required: true
-
       - name: "podcasts_list"
         label: "Liste de podcasts du jour"
         collapsed: false
         widget: "list"
         fields:
-          - name: "podcast_title"
-            label: "Titre du podcast"
-            widget: "string"
-            required: true
-
-          - name: "podcast_author"
-            label: "Auteur.e"
-            widget: "string"
-            required: false
-          # - name: "podcast_author"
-          #   label: "Auteur.e"
-          #   widget: "relation"
-          #   collection: "podcast_authors"
-          #   searchFields: ["name.first", "name.last"]
-          #   valueField: "name.first name.first"
-
-          - name: "spotify_link"
-            label: "URL du podcast sur Spotify"
-            hint: "Ex.: https://open.spotify.com/embed-podcast/episode/21AGLvTTEM9U1YZoIMsrgc"
-            widget: "string"
-            required: true
-
+          - { name: "podcast_title", label: "Titre du podcast", widget: "string", required: true }
+          - { name: "podcast_author", label: "Auteur.e", widget: "string", required: false }
+          - {
+            name: "spotify_link",
+            label: "URL du podcast sur Spotify",
+            hint: "Ex.: https://open.spotify.com/embed-podcast/episode/21AGLvTTEM9U1YZoIMsrgc",
+            widget: "string",
+            required: true }
       - name: "description"
         label: "Description de la page"
         hint: "Une brève description de la page."
         widget: "string"
         required: false
-
       # - name: "body"
       #   label: "Contenu de la page"
       #   widget: "markdown"
+
+  - name: "books" # Used in routes, e.g., /admin/collections/podcasts
+    label: "Livres" # Used in the UI
+    label_singular: "Livre" # Used in the UI, ie: "New Livre"
+    description: "Base de données des livres lus par Alia Elesse."
+    folder: "_books/" # The path to the folder where the documents are stored
+    media_folder: "assets/images/books" # Where media files will be stored in the repo
+    create: true # Allow users to create new documents in this collection
+    show_preview_links: false # Show Preview Links
+    editor:
+      preview: false
+    # slug: "{{slug}}" # Filename template, e.g., title.md
+    fields: # The fields for each document, usually in front matter
+      - name: "title"
+        label: "Titre du livre"
+        widget: "string"
+      - name: "thumbnail"
+        label: "Photo de couverture"
+        widget: "image"
+      - name: "published_date"
+        label: "Date de publication du podcast"
+        widget: "date"
+        format: "YYYY-MM-DD"
+      - name: "shop_link"
+        label: "URL de vente en ligne"
+        hint: "Ex.: https://www.amazon.com/dp/B01GSIZ9EY/"
+        widget: "string"
+
   # - name: "page" # Used in routes, ie.: /admin/collections/:slug/page
   #   label: "Pages (BETA)" # Used in the UI, ie
+  #   label_singular: "Page" # Used in the UI, ie: "New Page"
   #   label_singular: "Page" # Used in the UI, ie.: "New Post"
   #   folder: "/pages" # The path to the folder where the documents are stored
   #   create: true # Allow users to create new documents in this collection
@@ -189,3 +233,33 @@ collections:
   #     - {label: "Excerpt", name: "excerpt", widget: "string", required: false}
   #     - {label: "Body", name: "body", widget: "markdown"}
   #     - {label: "Meta image", name: "image", widget: "image", required: false}
+
+  - name: "settings"
+    label: "Paramètres"
+    description: >
+      "Configuration générale du site : Dans cette collection, vous pouvez modifier 
+      certaines informations et configurations de votre site tels les réseaux sociaux, 
+      le nombre d'articles par page, etc."
+    delete: false
+    create: false
+    editor:
+      preview: false
+    files:
+      - name: "general_site_settings"
+        label: "Paramètres généraux"
+        file: "_config.yml"
+        fields:
+          - { name: "title", label: "Titre du site", widget: "string" }
+          - { name: "description", label: "Description du site", widget: "string" }
+          - { name: "per_page", label: "Nombre d'articles par page", widget: "number", min: 1, max: 25 }
+          - name: "social"
+            label: "Réseaux sociaux"
+            widget: "object"
+            collapsed: false
+            fields:
+              - { name: "instagram", label: "Instagram", widget: "string" }
+              - { name: "twitter", label: "Twitter", widget: "string" }
+              - { name: "facebook", label: "Facebook", widget: "string" }
+              - { name: "youtube", label: "YouTube", widget: "string" }
+              - { name: "formations", label: "Formations Aliapourvous", widget: "string" }
+              - { name: "email", label: "Adresse email", widget: "string" }
