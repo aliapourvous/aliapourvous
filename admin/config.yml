@@ -211,6 +211,11 @@ collections:
         label: "Date de publication du podcast"
         widget: "date"
         format: "YYYY-MM-DD"
+      - name: "tags"
+        label: "Tags"
+        hint: "Liste des mots séparés par une virgule."
+        widget: "list"
+        required: false
       - name: "shop_link"
         label: "URL de vente en ligne"
         hint: "Ex.: https://www.amazon.com/dp/B01GSIZ9EY/"
