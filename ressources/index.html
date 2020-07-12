@@ -4,13 +4,37 @@ title: Ressources
 description: Ressources de Aliapourvous
 noindex: true
 permalink: /ressources/index
-redirect_from: /ressources/accueil
 thumbnail: /assets/images/papers-pages-209137.jpg
 image: /assets/images/papers-pages-209137.jpg
 ---
+
 {% comment %} /assets/images/wheel_of_change.png {% endcomment %}
 
-<div class="jdb-panel jdb-round jdb-theme jdb-large">
+<style>
+  #livres .grid-row img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+  }
+  .grid-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* grid-template-rows: repeat(3, 1fr); */
+    grid-column-gap: 16px;
+    grid-row-gap: 16px;
+  }
+  .grid-row::before {
+    content: none;
+  }
+  @media (max-width:600px) {
+    .grid-row { grid-template-columns: repeat(1, 1fr); }
+  }
+  @media (max-width:993px) {
+    .grid-row { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+
+<div class="jdb-panel jdb-round jdb-theme jdb-lg">
   <p>PLONGEZ PLUS PROFONDÉMENT DANS MON UNIVERS</p>
 </div>
 
@@ -23,7 +47,7 @@ image: /assets/images/papers-pages-209137.jpg
   <li>Suivez la série de vidéos « <a href="{{ site.data.links.formations }}/building-project">Building project</a> ».</li>
 </ul>
 
-<div class="jdb-panel jdb-round jdb-theme jdb-large">
+<div class="jdb-panel jdb-round jdb-theme jdb-lg">
   <p>SÉRIE BUILDING PROJECT</p>
 </div>
 
@@ -36,7 +60,7 @@ image: /assets/images/papers-pages-209137.jpg
   <i class="fa fa-external-link" aria-hidden="true"></i>
 </a>
 
-<!-- <div class="jdb-panel jdb-round jdb-theme jdb-large">
+<!-- <div class="jdb-panel jdb-round jdb-theme jdb-lg">
   <p>FEUILLES DE TRAVAIL</p>
 </div>
 
@@ -46,22 +70,44 @@ Mon Ndezi Board DOCUMENT A CREER ( (Ex: lien hypertexte : https://lavendaire.lp
 Mon dailylog sheet (Ex: lien hypertexte : https://lavendaire.lpages.co/ideal-week-planner/)  | Vidéo: Planifier sa semaine
 La roue du changement (Ex: lien hypertexte : https://lavendaire.lpages.co/ideal-week-planner/) | Vidéo: Se libérer du regard des autres en 5 minutes (Lien hypertexte : https://www.youtube.com/watch?v=3-FiqgVzXqY&list=PLtN-71eakMNjTODggeCW4sacDXXTWtUGR)</p> -->
 
-<div class="jdb-panel jdb-round jdb-theme jdb-large">
-  <p>LIVRES</p>
+<div id="livres">
+  <div class="jdb-panel jdb-round jdb-theme jdb-lg">
+    <p>LIVRES</p>
+  </div>
+  <p>Liste des livres recommandables :</p>
+  <div class="grid-row">
+    {% for book in site.books %}
+      <div class="grid-col jdb-opacity-min jdb-hover-opacity-off">
+        <a href="{{ book.shop_link }}" target="_blank" rel="noopener noreferrer">
+          <img class="jdb-round-md" loading="lazy" src="{{ book.thumbnail }}" alt="{{ book.title }}"/>
+          <div class="h4 jdb-bold">{{ book.title }}</div>
+          <div class="tags-container">
+            {% for book_tag in book.tags %}
+              <span class="jdb-tag jdb-medium jdb-padding-sm jdb-round-lg jdb-text-blue jdb-pale-blue">
+                <i class="fa fa-fw fa-tag" aria-hidden="true"></i> {{ book_tag }}
+              </span>
+            {% endfor %}
+          </div>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+
+  <hr class="jdb-hr"/>
+
+  <p><!-- Mes quotidiens (REFAIRE LA PAGE DES QUOTIDIENS) YOUTUBE, BLOGS, PODCASTING -->
+  Parcourir <a href="https://www.youtube.com/watch?v=FKOVz6DQlwM&index=3&list=PLtN-71eakMNjTODggeCW4sacDXXTWtUGR" target="_blank" rel="noopener noreferer">mes playlists</a> YouTube</p>
 </div>
 
-<p>
-  <!-- Mes quotidiens (REFAIRE LA PAGE DES QUOTIDIENS)
-Liste des livres recommandables (RAJOUTER DES LIVRES)
-YOUTUBE, BLOGS, PODCASTING -->
-Parcourir <a href="https://www.youtube.com/watch?v=FKOVz6DQlwM&index=3&list=PLtN-71eakMNjTODggeCW4sacDXXTWtUGR" target="_blank" rel="noopener noreferer">mes playlists</a> YouTube</p>
+<div id="inspiration">
+  <div class="jdb-panel jdb-round jdb-theme jdb-lg">
+    <p>INSPIRATION</p>
+  </div>
 
-<div class="jdb-panel jdb-round jdb-theme jdb-large">
-  <p>INSPIRATION</p>
+  <p>
+    <ul class="jdb-ul">
+      <li>Playlist : <a href="https://www.youtube.com/watch?v=POKbWNXF4DU&list=PLtN-71eakMNjTODggeCW4sacDXXTWtUGR&index=4" target="_blank" rel="noopener noreferer">Vidéos inspirantes préférées</a></li>
+      <li>Playlist : <a href="https://www.youtube.com/watch?v=p4rRCjrAyCs&list=PLtN-71eakMNj7Ir4yczqcVVhwv_CdQTFJ" target="_blank" rel="noopener noreferer">Therapy of music</a></li>
+    </ul>
+  </p>
 </div>
-<p>
-  <ul class="jdb-ul">
-    <li>Playlist : <a href="https://www.youtube.com/watch?v=POKbWNXF4DU&list=PLtN-71eakMNjTODggeCW4sacDXXTWtUGR&index=4" target="_blank" rel="noopener noreferer">Vidéos inspirantes préférées</a></li>
-    <li>Playlist : <a href="https://www.youtube.com/watch?v=p4rRCjrAyCs&list=PLtN-71eakMNj7Ir4yczqcVVhwv_CdQTFJ" target="_blank" rel="noopener noreferer">Therapy of music</a></li>
-  </ul>
-</p>
