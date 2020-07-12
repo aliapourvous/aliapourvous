@@ -85,15 +85,24 @@ $(document).ready(function(){
   });
 
   // Toggle small menu
-  $("[data-jdb-action='toggle-small-screen-menu']").each(function() {
+  $("[data-jdb-action='toggle-small-screen-menu']").each(function(){
     $(this).click(function() {
       $("#small-screen-menu").slideToggle();
     });
   });
 
-  $("[data-jdb-toggle-onclick]").each(function() {
+  $("[data-jdb-toggle-onclick]").each(function(){
     $(this).click(function() {
-      $($(this).attr("data-jdb-toggle-onclick")).slideToggle();
+      var $el = $($(this).attr("data-jdb-toggle-onclick"));
+      if ($el.is(":visible")) {
+        $el.slideUp();
+        $(this).removeClass("jdb-theme").find(".fa.jdb-right")
+          .addClass("fa-plus").removeClass("fa-minus");
+      } else {
+        $el.slideDown();
+        $(this).addClass("jdb-theme").find(".fa.jdb-right")
+          .removeClass("fa-plus").addClass("fa-minus");
+      }
     });
   });
 
