@@ -1,6 +1,6 @@
 ---
 title: Précieuse comme un diamant Broché
-thumbnail: assets/images/books/precieuse-comme-un-diamant-broche.jpg
+thumbnail: /assets/images/books/precieuse-comme-un-diamant-broche.jpg
 published_date: 2020-07-10
 tags:
   - Spiritual journey

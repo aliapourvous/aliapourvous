@@ -1,6 +1,6 @@
 ---
 title: Love Like You've Never Been Hurt
-thumbnail: assets/images/books/love-like-you-ve-never-been-hurt.jpg
+thumbnail: /assets/images/books/love-like-you-ve-never-been-hurt.jpg
 published_date: 2020-07-10T00:00:00.000Z
 tags:
   - Spiritual journey

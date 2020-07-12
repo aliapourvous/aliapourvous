@@ -1,6 +1,6 @@
 ---
 title: Extravagant Worship
-thumbnail: assets/images/books/extravagant-worship.jpg
+thumbnail: /assets/images/books/extravagant-worship.jpg
 published_date: 2020-07-10
 tags:
   - Spiritual journey

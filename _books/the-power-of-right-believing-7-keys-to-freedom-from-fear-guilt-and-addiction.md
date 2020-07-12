@@ -1,6 +1,6 @@
 ---
 title: The Power of Right Believing
-thumbnail: assets/images/books/the-power-of-right-believing.jpg
+thumbnail: /assets/images/books/the-power-of-right-believing.jpg
 published_date: 2020-07-10T00:00:00.000Z
 tags:
   - Spiritual journey
