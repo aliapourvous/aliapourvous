@@ -27,10 +27,10 @@ image: /assets/images/papers-pages-209137.jpg
     content: none;
   }
   @media (max-width:600px) {
-    .grid-row { grid-template-columns: repeat(1, 1fr); }
+    .grid-row { grid-template-columns: repeat(1, 1fr) !important; }
   }
-  @media (max-width:993px) {
-    .grid-row { grid-template-columns: repeat(2, 1fr); }
+  @media (min-width: 601px) and (max-width:993px) {
+    .grid-row { grid-template-columns: repeat(2, 1fr) !important; }
   }
 </style>
 
