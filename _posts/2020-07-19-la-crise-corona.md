@@ -2,18 +2,21 @@
 layout: post
 noindex: false
 comments: true
-title: "La crise Corona "
+title: La crise Corona
 date: 2020-05-31 08:53
 author:
   - Alia Elesse
 thumbnail: /assets/images/posts/pandemia.jpg
 category: Africa
-image: ""
+image: /assets/images/posts/covid-19.jpg
 ---
 Mars 2020,
 
-le monde est frappé par la pandémie. Pays après pays, nous entendons les dégâts qu'engendre cette maladie qui apeure l'humanité. Les morts augmentent, la panique prend place. 
-L'isolation commence pour la survie de tous.
+le monde est frappé par la pandémie. Pays après pays, nous entendons les dégâts qu'engendre cette maladie qui apeure l'humanité. Les morts augmentent, la panique prend place. L'isolation commence pour la survie de tous.
+
+![Covid-19](/assets/images/posts/covid-19.jpg)
+
+
 Malade, je suis touchée pendant 2 semaines d'une maladie qui me fragilisent et qui me rend si faible, perte de goût, fatigue extrême, quinte de toux et fièvre.
 
 Ma soeur et mon père débattent de mon sort qui devient alarmant...
@@ -34,7 +37,7 @@ Le quartier est calme, plus de circulation comme avant, des gardes partout qui p
 
 Augmentation des prix de l'alimentaire, augmentation des prix des unités de communication.
 La crise touche à tous les niveaux. Les entreprises et le gouvernement se battent pour obtenir des fonds via le COVID. 
-Pour certains crises économique, pour d'autres une belle opportunité de se faire de l'argent.Et pour les hommes spirituels, un retour au culte familial, à la prière personnelle. Pour ceux qui étaient novices aux médias sont devenus nantis.
+Pour certains crises économique, pour d'autres une belle opportunité de se faire de l'argent.  Et pour les hommes spirituels, un retour au culte familial, à la prière personnelle. Pour ceux qui étaient novices aux médias sont devenus nantis.
 
 En ce qui concerne les artistes, un moment d'inspiration...
 
