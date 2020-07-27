@@ -17,7 +17,7 @@ le monde est frappé par la pandémie. Pays après pays, nous entendons les dég
 ![Covid-19](/assets/images/posts/covid-19.jpg)
 
 
-Malade, je suis touchée pendant 2 semaines d'une maladie qui me fragilisent et qui me rend si faible, perte de goût, fatigue extrême, quinte de toux et fièvre.
+Malade, je suis touchée pendant 2 semaines d'une maladie qui me fragilise et qui me rend si faible, perte de goût, fatigue extrême, quinte de toux et fièvre.
 
 Ma soeur et mon père débattent de mon sort qui devient alarmant...
 Devons-nous l'amener à l'hôpital? Mon père refuse, il est hors de question que l'on me mette en quarantaine dans un hôpital de la place qui n'a pas maîtrisé la crise. 
