@@ -6,20 +6,20 @@ This site was created by [José dBruxelles](https://www.we-rl.xyz).
 
 The content of this site is managed by NetlifyCMS. Visit https://{site-domain}/admin to manage site content.
 
-# Running Your Site Locally
+# Running this site locally
 
 1. Install a full [Ruby development environment](https://jekyllrb.com/docs/installation/)
 
-1. Install Jekyll and Bundler
+2. Install Jekyll and Bundler
 
         gem install jekyll bundler
 
-1. Install dependencies from Gemfile:
+3. Install dependencies from Gemfile:
 
         bundle install
 
-1. Build the site and make it available on a local server
+4. Build the site and make it available on a local server
 
         bundle exec jekyll serve
 
-1. Browse to [http://localhost:4000](http://localhost:4000)
+5. Browse to [http://localhost:4000](http://localhost:4000)
