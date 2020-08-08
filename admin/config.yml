@@ -46,7 +46,7 @@ collections:
       - { name: "layout", label: "Layout", widget: "hidden", default: "post" }
       - {
         name: "published",
-        label: Publier",
+        label: Publier,
         hint: "Afficher le post sur le site",
         widget: "boolean",
         default: true }
