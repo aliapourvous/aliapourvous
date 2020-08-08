@@ -1,5 +1,6 @@
 ---
 layout: post
+published: true
 noindex: true
 comments: true
 title: Biennale Yango 2020/Esika ya makanisi

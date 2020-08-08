@@ -1,5 +1,6 @@
 ---
 layout: post
+published: true
 noindex: false
 comments: true
 title: La crise Corona
