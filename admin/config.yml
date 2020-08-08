@@ -45,6 +45,12 @@ collections:
     fields: # The fields for each document, usually in front matter
       - { name: "layout", label: "Layout", widget: "hidden", default: "post" }
       - {
+        name: "published",
+        label: Publier",
+        hint: "Afficher le post sur le site",
+        widget: "boolean",
+        default: true }
+      - {
         name: "noindex",
         label: "Ne pas indexer",
         hint: "Cochez cette option pour cacher cet article de moteurs de recherche.",

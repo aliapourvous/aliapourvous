@@ -8,7 +8,7 @@ permalink: /
     background-position: center;
     background-size: cover;
     border: 10px double #ccc;
-    height: 250px;    
+    height: 250px;
   }
   #section-nav-caontainer .jdb-row-padding a .jdb-display-middle {
     border: 2px solid #ccc;
@@ -89,9 +89,11 @@ permalink: /
         <span>Articles récents</span> - <a href="/blog"><u>Blog</u></a>
       </h3>
       <div class="posts__container" itemscope itemtype="http://schema.org/Blog">
-        
-        {% for post in site.posts limit:3 %}
-          {% include post-card.html %}
+
+        {% for post in site.posts limit:8 %}
+          {% unless post.published == false %}
+            {% include post-card.html %}
+          {% endunless %}
         {% endfor %}
 
       </div>
