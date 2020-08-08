@@ -1,14 +1,12 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/908eba1d-d12d-4c10-8dfb-ec97643c8583/deploy-status)](https://app.netlify.com/sites/alia-aliapourvous/deploys)
 
 # Aliapourvous Theme
----
 
 This site was created by [José dBruxelles](https://www.we-rl.xyz).
 
 The content of this site is managed by NetlifyCMS. Visit https://{site-domain}/admin to manage site content (`site-domain` can be `localhost:PORT`).
 
 # Running this site locally
----
 
 ## Installation
 
