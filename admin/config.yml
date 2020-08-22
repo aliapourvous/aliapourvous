@@ -214,7 +214,7 @@ collections:
         label: "Photo de couverture"
         widget: "image"
       - name: "published_date"
-        label: "Date de publication du podcast"
+        label: "Date de publication du livre"
         widget: "date"
         format: "YYYY-MM-DD"
       - name: "tags"
