@@ -21,7 +21,7 @@ Les vergétures, le sida, la rue, la spiritualité, la position sociale, la poll
 Yolande Elebe,initiatrice du projet, femme artisan de la plume, m'a gentiment invité à rejoindre ce collectif après avoir écouté mon chant "Mon Dieu a dansé".
 La poétesse Elfia également fait partie de l'aventure.
 
-Femme très engagée dans la promotion de l'écriture, Yolande, auteure du recueil de poèmes "Le Bictari" encourage la femme contemporaine à se manifester pour changer sa société à travers l'écriture, qui est le socle d'une société.
+Femme très engagée dans la promotion de l'écriture, Yolande, auteure du recueil de poèmes "Le Bictari" encourage la femme contemporaine à se manifester pour une réforme sociétale à travers l'écriture, qui est le socle d'une société.
 
 Une aventure dans laquelle je n'ai pas hésité d'entrer car pour moi, faire partie des femmes de lettres congolaises est une responsabilité sociale et un honneur.
 
