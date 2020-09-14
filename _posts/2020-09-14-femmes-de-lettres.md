@@ -3,7 +3,7 @@ layout: post
 published: true
 noindex: false
 comments: true
-title: Femmes de lettres
+title: Je suis une femme de lettres
 date: 2020-08-31 12:48
 author: post
 image: /assets/images/posts/11044616-532477666894337-2719250543087957447-o-copie-59.jpg
@@ -25,4 +25,4 @@ Femme très engagée dans la promotion de l'écriture, Yolande, auteure du recue
 
 Une aventure dans laquelle je n'ai pas hésité d'entrer car pour moi, faire partie des femmes de lettres congolaises est une responsabilité sociale et un honneur.
 
-
+Oui je suis une femme de lettres car au travers de ma vie, je pense que plusieurs lettres seront écrites qui assureront mon immortalité dans le coeur de générations
