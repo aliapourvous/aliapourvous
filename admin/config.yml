@@ -104,7 +104,7 @@ collections:
       - {
         name: "category",
         label: "Catégorie",
-        hint: "Une seule catérogie. Mots séparés un tiret.",
+        hint: "Une seule catérogie (un seul mot pouvant être séparé par un tiret).",
         widget: "string",
         required: false }
       - {
