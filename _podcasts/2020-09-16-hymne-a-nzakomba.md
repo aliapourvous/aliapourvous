@@ -1,6 +1,6 @@
 ---
 published: true
-published_date: 2020-09-16
+published_date: 2020-09-06
 title: Hymne à Nzakomba
 podcasts_list:
   - spotify_link: https://open.spotify.com/episode/4BlkPvcvbqiJG66yOhNEA2?si=a6Nfds_VSOWcAnjQatg2mQ
